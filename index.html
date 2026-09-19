@@ -1,2326 +1,572 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio Educativo Digital de Gerson David Eheyen Guarnizo — EPT Computación.">
+    <meta name="theme-color" content="#0b1220">
+    <title>Portafolio EPT | Computación — Gerson David Eheyen</title>
 
-    <meta name="description"
-        content="Portafolio Educativo Digital de Educación Secundaria con mención en Matemática e Informática">
+    <!-- Tipografías: sans moderna + monoespaciada para el lenguaje computacional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
-    <title>Portafolio Educativo Digital | Matemática e Informática</title>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configuración de Tailwind -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        academic: {
-                            50: "#f8fafc",
-                            100: "#f1f5f9",
-                            200: "#e2e8f0",
-                            300: "#cbd5e1",
-                            500: "#64748b",
-                            600: "#475569",
-                            700: "#334155",
-                            800: "#1e293b",
-                            900: "#0f172a"
-                        },
-
-                        indigoAcademic: {
-                            500: "#6366f1",
-                            600: "#4f46e5",
-                            700: "#4338ca"
-                        },
-
-                        emeraldAcademic: {
-                            500: "#10b981",
-                            600: "#059669",
-                            700: "#047857"
-                        }
-                    },
-
-                    boxShadow: {
-                        academic:
-                            "0 10px 30px rgba(15, 23, 42, 0.08)"
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                Inter,
-                ui-sans-serif,
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-        }
-
-        .tab-section {
-            display: none;
-            animation: fadeIn 0.35s ease;
-        }
-
-        .tab-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        .nav-link.active {
-            color: #4f46e5;
-            background-color: #eef2ff;
-        }
-
-        .evidence-card {
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease;
-        }
-
-        .evidence-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .copy-button.copied {
-            background-color: #059669;
-            color: white;
-        }
-
-        .mobile-menu {
-            display: none;
-        }
-
-        .mobile-menu.open {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-
-            .desktop-nav {
-                display: none;
-            }
-
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
+<body>
+    <!-- =========================================================
+         PANTALLA DE CARGA
+    ========================================================== -->
+    <div id="loader" class="loader" aria-label="Cargando portafolio">
+        <div class="loader-grid"></div>
+        <div class="loader-content">
+            <div class="loader-logo" aria-hidden="true">
+                <span>GE</span>
+                <i></i>
+            </div>
 
-<body class="bg-slate-50 text-slate-800">
+            <p class="eyebrow loader-eyebrow">PORTAFOLIO EDUCATIVO DIGITAL</p>
+            <h1>EPT · <span>COMPUTACIÓN</span></h1>
+            <p class="loader-name">Gerson David Eheyen Guarnizo</p>
 
-
-    <!-- =====================================================
-         NAVEGACIÓN
-    ====================================================== -->
-
-    <header
-        class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
-
-        <nav
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-            aria-label="Navegación principal">
-
-            <div class="flex items-center justify-between h-16">
-
-
-                <!-- Identidad -->
-
-                <button
-                    onclick="showSection('inicio')"
-                    class="flex items-center gap-3 text-left"
-                    aria-label="Ir al inicio">
-
-                    <div
-                        class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">
-
-                        MI
-
-                    </div>
-
-                    <div class="hidden sm:block">
-
-                        <p class="font-bold text-slate-900">
-                            Portafolio Educativo
-                        </p>
-
-                        <p class="text-xs text-slate-500">
-                            Matemática e Informática
-                        </p>
-
-                    </div>
-
-                </button>
-
-
-                <!-- Navegación escritorio -->
-
-                <div
-                    class="desktop-nav flex items-center gap-1">
-
-                    <button
-                        class="nav-link active px-4 py-2 rounded-lg text-sm font-medium"
-                        onclick="showSection('inicio')">
-
-                        Inicio
-
-                    </button>
-
-                    <button
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium"
-                        onclick="showSection('perfil')">
-
-                        Perfil
-
-                    </button>
-
-                    <button
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium"
-                        onclick="showSection('evidencias')">
-
-                        Evidencias
-
-                    </button>
-
-                    <button
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium"
-                        onclick="showSection('matriz')">
-
-                        Matriz IA
-
-                    </button>
-
-                    <button
-                        class="nav-link px-4 py-2 rounded-lg text-sm font-medium"
-                        onclick="showSection('equipo')">
-
-                        Equipo
-
-                    </button>
-
+            <div class="loader-career">
+                <span class="loader-icon">&lt;/&gt;</span>
+                <div>
+                    <small>Carrera profesional</small>
+                    <strong>Educación Secundaria con mención en Matemática e Informática</strong>
                 </div>
-
-
-                <!-- Menú móvil -->
-
-                <button
-                    id="menuButton"
-                    class="md:hidden p-2 rounded-lg hover:bg-slate-100"
-                    aria-label="Abrir menú"
-                    aria-expanded="false"
-                    onclick="toggleMobileMenu()">
-
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-
-                    </svg>
-
-                </button>
-
             </div>
 
-
-            <!-- Menú móvil -->
-
-            <div
-                id="mobileMenu"
-                class="mobile-menu md:hidden pb-4">
-
-                <button
-                    onclick="showSection('inicio')"
-                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100">
-
-                    Inicio
-
-                </button>
-
-                <button
-                    onclick="showSection('perfil')"
-                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100">
-
-                    Perfil
-
-                </button>
-
-                <button
-                    onclick="showSection('evidencias')"
-                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100">
-
-                    Evidencias
-
-                </button>
-
-                <button
-                    onclick="showSection('matriz')"
-                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100">
-
-                    Matriz de IA
-
-                </button>
-
-                <button
-                    onclick="showSection('equipo')"
-                    class="block w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100">
-
-                    Equipo
-
-                </button>
-
+            <div class="loader-progress" aria-hidden="true">
+                <span></span>
             </div>
+            <p class="loader-status">Preparando experiencia digital...</p>
+        </div>
+    </div>
 
+    <!-- =========================================================
+         NAVEGACIÓN
+    ========================================================== -->
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navegación principal">
+            <button class="brand" type="button" data-section="inicio" aria-label="Ir al inicio">
+                <span class="brand-mark">GE</span>
+                <span class="brand-copy">
+                    <strong>Portafolio <em>EPT</em></strong>
+                    <small>Computación</small>
+                </span>
+            </button>
+
+            <button id="menuToggle" class="menu-toggle" type="button"
+                    aria-label="Abrir menú" aria-controls="mainMenu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div id="mainMenu" class="nav-menu">
+                <button class="nav-link active" type="button" data-section="inicio">Inicio</button>
+                <button class="nav-link" type="button" data-section="docente">Docente</button>
+                <button class="nav-link" type="button" data-section="sesiones">Sesiones</button>
+                <button class="nav-link" type="button" data-section="evidencias">Evidencias</button>
+                <button class="nav-link" type="button" data-section="ia">IA ética</button>
+                <button class="nav-link" type="button" data-section="sustentacion">Sustentación</button>
+            </div>
         </nav>
-
     </header>
 
-
     <main>
-
-
         <!-- =====================================================
-             INICIO
+             INICIO — PRESENTACIÓN DEL DOCENTE
         ====================================================== -->
+        <section id="inicio" class="page-section active">
+            <div class="hero">
+                <div class="hero-glow hero-glow-one"></div>
+                <div class="hero-glow hero-glow-two"></div>
 
-        <section
-            id="inicio"
-            class="tab-section active">
+                <div class="container hero-grid">
+                    <div class="hero-copy">
+                        <div class="hero-badge">
+                            <span class="pulse-dot"></span>
+                            PORTAFOLIO EPT · COMPUTACIÓN
+                        </div>
 
+                        <p class="hero-kicker">Presentación del docente</p>
 
-            <!-- HERO -->
-
-            <div
-                class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white">
-
-                <div
-                    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-
-
-                    <div class="max-w-4xl">
-
-
-                        <span
-                            class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/20 text-sm font-medium mb-6">
-
-                            PORTAFOLIO EDUCATIVO DIGITAL
-
-                        </span>
-
-
-                        <h1
-                            class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-
-                            Gestión, publicación de proyectos digitales
-                            e integración ética de IA
-
+                        <h1>
+                            Gerson David
+                            <span>Eheyen Guarnizo</span>
                         </h1>
 
-
-                        <p
-                            class="mt-6 text-lg text-slate-300 max-w-3xl leading-relaxed">
-
-                            Espacio digital para presentar evidencias,
-                            proyectos y experiencias de aprendizaje
-                            desarrolladas mediante el uso pedagógico de
-                            herramientas digitales e inteligencia artificial
-                            en Matemática e Informática.
-
+                        <p class="hero-lead">
+                            Docente en formación orientado al desarrollo de la competencia digital,
+                            el pensamiento computacional y la creación de experiencias de aprendizaje
+                            mediante tecnología.
                         </p>
 
-
-                        <div
-                            class="mt-8 flex flex-wrap gap-4">
-
-
-                            <button
-                                onclick="showSection('evidencias')"
-                                class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold transition">
-
-                                Explorar evidencias
-
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" type="button" data-section="docente">
+                                Conocer al docente
+                                <span>→</span>
                             </button>
-
-
-                            <button
-                                onclick="showSection('matriz')"
-                                class="px-6 py-3 rounded-xl border border-slate-500 hover:bg-white/10 font-semibold transition">
-
-                                Ver matriz de IA
-
+                            <button class="btn btn-ghost" type="button" data-section="evidencias">
+                                Ver evidencias
                             </button>
-
-
                         </div>
 
+                        <div class="hero-meta">
+                            <div>
+                                <span>Área</span>
+                                <strong>EPT · Computación</strong>
+                            </div>
+                            <div>
+                                <span>Nivel</span>
+                                <strong>Educación Secundaria</strong>
+                            </div>
+                            <div>
+                                <span>Enfoque</span>
+                                <strong>Crear · Programar · Resolver</strong>
+                            </div>
+                        </div>
                     </div>
 
-
-                    <!-- DATOS ACADÉMICOS -->
-
-                    <div
-                        class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-
-                        <div
-                            class="bg-white/10 border border-white/10 rounded-2xl p-5">
-
-                            <p class="text-sm text-slate-400">
-                                Carrera
-                            </p>
-
-                            <p class="mt-1 font-semibold">
-                                Educación Secundaria
-                            </p>
-
+                    <div class="teacher-card">
+                        <div class="teacher-card-top">
+                            <span class="status-chip"><i></i> Docente en formación</span>
+                            <span class="code-chip">&lt;EPT/&gt;</span>
                         </div>
 
-
-                        <div
-                            class="bg-white/10 border border-white/10 rounded-2xl p-5">
-
-                            <p class="text-sm text-slate-400">
-                                Mención
-                            </p>
-
-                            <p class="mt-1 font-semibold">
-                                Matemática e Informática
-                            </p>
-
+                        <div class="avatar">
+                            <span>GE</span>
                         </div>
 
+                        <h2>Gerson David Eheyen Guarnizo</h2>
+                        <p class="teacher-role">Educación Secundaria · Matemática e Informática</p>
 
-                        <div
-                            class="bg-white/10 border border-white/10 rounded-2xl p-5">
+                        <div class="teacher-line"></div>
 
-                            <p class="text-sm text-slate-400">
-                                Nivel
-                            </p>
-
-                            <p class="mt-1 font-semibold">
-                                Secundaria
-                            </p>
-
+                        <div class="teacher-info">
+                            <div>
+                                <span class="info-icon">01</span>
+                                <p><small>Área de trabajo</small><strong>EPT — Computación</strong></p>
+                            </div>
+                            <div>
+                                <span class="info-icon">02</span>
+                                <p><small>Competencia</small><strong>Competencia digital</strong></p>
+                            </div>
+                            <div>
+                                <span class="info-icon">03</span>
+                                <p><small>Propósito</small><strong>Aprender haciendo</strong></p>
+                            </div>
                         </div>
 
-
-                        <div
-                            class="bg-white/10 border border-white/10 rounded-2xl p-5">
-
-                            <p class="text-sm text-slate-400">
-                                Área de integración
-                            </p>
-
-                            <p class="mt-1 font-semibold">
-                                Tecnología educativa
-                            </p>
-
+                        <div class="terminal-mini">
+                            <span>$</span> diseñar_aprendizaje<span class="cursor">_</span>
                         </div>
-
-
                     </div>
-
                 </div>
-
             </div>
 
+            <div class="container section-space">
+                <div class="section-heading centered">
+                    <p class="eyebrow">Identidad académica</p>
+                    <h2>Una propuesta centrada en <span>Computación</span></h2>
+                    <p>
+                        El portafolio organiza el trabajo del docente, las sesiones,
+                        las evidencias y el uso responsable de inteligencia artificial
+                        en un mismo espacio digital.
+                    </p>
+                </div>
 
-            <!-- PRESENTACIÓN -->
-
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-
-                <div
-                    class="grid lg:grid-cols-3 gap-8">
-
-
-                    <article
-                        class="lg:col-span-2 bg-white rounded-2xl p-8 shadow-academic">
-
-                        <span
-                            class="text-indigo-600 font-semibold text-sm">
-
-                            PRESENTACIÓN
-
-                        </span>
-
-
-                        <h2
-                            class="text-3xl font-bold text-slate-900 mt-2">
-
-                            Aprender, crear y publicar con tecnología
-
-                        </h2>
-
-
-                        <p
-                            class="mt-5 text-slate-600 leading-relaxed">
-
-                            Este portafolio reúne los productos y evidencias
-                            desarrollados durante la experiencia formativa,
-                            mostrando la integración de recursos digitales,
-                            programación, herramientas matemáticas e
-                            inteligencia artificial dentro del proceso
-                            educativo.
-
-                        </p>
-
-
-                        <p
-                            class="mt-4 text-slate-600 leading-relaxed">
-
-                            El uso de la tecnología se plantea como un medio
-                            para favorecer la resolución de problemas,
-                            el pensamiento lógico, la creatividad,
-                            la colaboración y el aprendizaje autónomo.
-
-                        </p>
-
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon blue">&lt;/&gt;</div>
+                        <div>
+                            <h3>Computación educativa</h3>
+                            <p>Uso pedagógico de herramientas digitales, programación y recursos tecnológicos.</p>
+                        </div>
                     </article>
 
+                    <article class="feature-card">
+                        <div class="feature-icon orange">✦</div>
+                        <div>
+                            <h3>Aprendizaje activo</h3>
+                            <p>Actividades prácticas orientadas a crear, experimentar, resolver y comunicar.</p>
+                        </div>
+                    </article>
 
-                    <aside
-                        class="bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
-
-
-                        <h2
-                            class="font-bold text-indigo-900 text-xl">
-
-                            Propósito
-
-                        </h2>
-
-
-                        <p
-                            class="mt-4 text-indigo-800 leading-relaxed">
-
-                            Diseñar y publicar proyectos educativos digitales
-                            que integren Matemática, Informática e
-                            inteligencia artificial desde una perspectiva
-                            pedagógica, crítica y responsable.
-
-                        </p>
-
-                    </aside>
-
+                    <article class="feature-card">
+                        <div class="feature-icon cyan">AI</div>
+                        <div>
+                            <h3>IA con criterio</h3>
+                            <p>Documentación, verificación y trazabilidad del uso de herramientas generativas.</p>
+                        </div>
+                    </article>
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- =====================================================
-             PERFIL
+             DOCENTE
         ====================================================== -->
-
-        <section
-            id="perfil"
-            class="tab-section">
-
-
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-
-                <div class="max-w-3xl mb-12">
-
-                    <span
-                        class="text-indigo-600 font-semibold text-sm">
-
-                        PERFIL Y PROPUESTA PEDAGÓGICA
-
-                    </span>
-
-
-                    <h1
-                        class="text-4xl font-bold text-slate-900 mt-2">
-
-                        Perfil docente y propuesta
-
-                    </h1>
-
-
-                    <p
-                        class="mt-4 text-slate-600">
-
-                        Integración de conocimientos matemáticos,
-                        tecnológicos y pedagógicos para la educación
-                        secundaria.
-
+        <section id="docente" class="page-section">
+            <div class="container section-space">
+                <div class="section-heading">
+                    <p class="eyebrow">01 · Perfil</p>
+                    <h2>Perfil <span>docente</span></h2>
+                    <p>
+                        Presentación profesional y propuesta pedagógica del docente en formación
+                        para el área de EPT — Computación.
                     </p>
-
                 </div>
 
-
-                <div
-                    class="grid lg:grid-cols-3 gap-6">
-
-
-                    <!-- OBJETIVOS -->
-
-                    <article
-                        class="bg-white rounded-2xl p-7 shadow-academic">
-
-
-                        <div
-                            class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
-
-                            01
-
+                <div class="profile-layout">
+                    <article class="profile-main">
+                        <div class="profile-intro">
+                            <div class="avatar avatar-large">GE</div>
+                            <div>
+                                <span class="tag">DOCENTE EN FORMACIÓN</span>
+                                <h3>Gerson David Eheyen Guarnizo</h3>
+                                <p>Educación Secundaria con mención en Matemática e Informática</p>
+                            </div>
                         </div>
 
-
-                        <h2
-                            class="text-xl font-bold mt-5">
-
-                            Objetivos de aprendizaje
-
-                        </h2>
-
-
-                        <ul
-                            class="mt-5 space-y-3 text-slate-600">
-
-
-                            <li>
-                                • Aplicar estrategias digitales para la
-                                enseñanza de la Matemática.
-                            </li>
-
-                            <li>
-                                • Diseñar recursos interactivos para
-                                estudiantes de secundaria.
-                            </li>
-
-                            <li>
-                                • Utilizar herramientas de IA de forma
-                                crítica y responsable.
-                            </li>
-
-                            <li>
-                                • Desarrollar proyectos digitales orientados
-                                al aprendizaje.
-                            </li>
-
-                        </ul>
-
-                    </article>
-
-
-                    <!-- METODOLOGÍA -->
-
-                    <article
-                        class="bg-white rounded-2xl p-7 shadow-academic">
-
-
-                        <div
-                            class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
-
-                            02
-
+                        <div class="profile-text">
+                            <p>
+                                Mi propuesta formativa integra tecnología, pensamiento computacional
+                                y estrategias activas para que los estudiantes no solo utilicen
+                                herramientas digitales, sino que comprendan cómo emplearlas para
+                                crear soluciones.
+                            </p>
+                            <p>
+                                En EPT — Computación, el aprendizaje se orienta a la práctica:
+                                explorar herramientas, plantear problemas, desarrollar productos
+                                digitales y reflexionar sobre su impacto y uso responsable.
+                            </p>
                         </div>
 
-
-                        <h2
-                            class="text-xl font-bold mt-5">
-
-                            Propuesta metodológica
-
-                        </h2>
-
-
-                        <p
-                            class="mt-5 text-slate-600 leading-relaxed">
-
-                            La propuesta utiliza aprendizaje basado en
-                            proyectos, resolución de problemas, exploración
-                            de recursos digitales y actividades prácticas.
-
-                        </p>
-
-
-                        <p
-                            class="mt-4 text-slate-600 leading-relaxed">
-
-                            La Informática se integra como herramienta para
-                            crear, analizar y comunicar soluciones,
-                            mientras que la Matemática fortalece el
-                            razonamiento lógico y la resolución de problemas.
-
-                        </p>
-
-                    </article>
-
-
-                    <!-- PERFIL -->
-
-                    <article
-                        class="bg-white rounded-2xl p-7 shadow-academic">
-
-
-                        <div
-                            class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center font-bold">
-
-                            03
-
+                        <div class="quote-box">
+                            <span>“</span>
+                            <p>La tecnología adquiere sentido educativo cuando permite al estudiante crear, resolver y comunicar.</p>
                         </div>
-
-
-                        <h2
-                            class="text-xl font-bold mt-5">
-
-                            Perfil docente
-
-                        </h2>
-
-
-                        <p
-                            class="mt-5 text-slate-600 leading-relaxed">
-
-                            Docente en formación orientado al desarrollo del
-                            pensamiento matemático, la competencia digital,
-                            la resolución de problemas y el uso responsable
-                            de herramientas tecnológicas.
-
-                        </p>
-
                     </article>
 
+                    <aside class="profile-side">
+                        <div class="side-card">
+                            <span class="number">01</span>
+                            <h3>Propósito</h3>
+                            <p>Diseñar experiencias de aprendizaje digitales, prácticas y pertinentes para secundaria.</p>
+                        </div>
+                        <div class="side-card">
+                            <span class="number">02</span>
+                            <h3>Metodología</h3>
+                            <p>Aprendizaje basado en proyectos, resolución de problemas y actividades prácticas.</p>
+                        </div>
+                        <div class="side-card">
+                            <span class="number">03</span>
+                            <h3>Responsabilidad</h3>
+                            <p>Uso crítico, transparente y verificable de la inteligencia artificial.</p>
+                        </div>
+                    </aside>
                 </div>
 
-
-                <!-- COMPETENCIAS -->
-
-                <div
-                    class="mt-12 bg-slate-900 text-white rounded-2xl p-8">
-
-
-                    <h2
-                        class="text-2xl font-bold">
-
-                        Competencias desarrolladas
-
-                    </h2>
-
-
-                    <div
-                        class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-
-                        <div
-                            class="bg-white/10 rounded-xl p-5">
-
-                            <h3 class="font-semibold">
-                                Pensamiento matemático
-                            </h3>
-
-                            <p
-                                class="text-sm text-slate-300 mt-2">
-
-                                Análisis, razonamiento y resolución de
-                                problemas.
-
-                            </p>
-
-                        </div>
-
-
-                        <div
-                            class="bg-white/10 rounded-xl p-5">
-
-                            <h3 class="font-semibold">
-                                Competencia digital
-                            </h3>
-
-                            <p
-                                class="text-sm text-slate-300 mt-2">
-
-                                Creación y utilización de recursos digitales.
-
-                            </p>
-
-                        </div>
-
-
-                        <div
-                            class="bg-white/10 rounded-xl p-5">
-
-                            <h3 class="font-semibold">
-                                Pensamiento computacional
-                            </h3>
-
-                            <p
-                                class="text-sm text-slate-300 mt-2">
-
-                                Descomposición de problemas y diseño de
-                                soluciones.
-
-                            </p>
-
-                        </div>
-
-
-                        <div
-                            class="bg-white/10 rounded-xl p-5">
-
-                            <h3 class="font-semibold">
-                                Uso ético de IA
-                            </h3>
-
-                            <p
-                                class="text-sm text-slate-300 mt-2">
-
-                                Utilización responsable y crítica de
-                                inteligencia artificial.
-
-                            </p>
-
-                        </div>
-
+                <div class="competency-panel">
+                    <div>
+                        <p class="eyebrow light">Competencias</p>
+                        <h3>Lo que guía la práctica docente</h3>
                     </div>
-
+                    <div class="competency-list">
+                        <span>Pensamiento computacional</span>
+                        <span>Competencia digital</span>
+                        <span>Resolución de problemas</span>
+                        <span>Creación de recursos</span>
+                        <span>Ciudadanía digital</span>
+                        <span>IA responsable</span>
+                    </div>
                 </div>
-
             </div>
-
         </section>
 
+        <!-- =====================================================
+             SESIONES
+        ====================================================== -->
+        <section id="sesiones" class="page-section">
+            <div class="container section-space">
+                <div class="section-heading">
+                    <p class="eyebrow">02 · Experiencia de aprendizaje</p>
+                    <h2>Sesiones de <span>EPT Computación</span></h2>
+                    <p>
+                        Espacio para organizar las sesiones y recursos desarrollados durante la experiencia formativa.
+                    </p>
+                </div>
+
+                <div class="session-feature">
+                    <div class="session-number">01</div>
+                    <div class="session-content">
+                        <div class="session-top">
+                            <span class="tag blue-tag">1.º DE SECUNDARIA</span>
+                            <span class="session-code">SESIÓN 01</span>
+                        </div>
+                        <h3>Introducción a la Computación</h3>
+                        <p>
+                            Primera sesión orientada a reconocer conceptos fundamentales de computación
+                            y establecer una base para el trabajo posterior con herramientas digitales.
+                        </p>
+                        <div class="session-pills">
+                            <span>Computación</span>
+                            <span>Conceptos básicos</span>
+                            <span>Competencia digital</span>
+                        </div>
+                    </div>
+                    <div class="session-arrow">→</div>
+                </div>
+
+                <div class="section-note">
+                    <span class="note-icon">+</span>
+                    <div>
+                        <strong>Portafolio en construcción</strong>
+                        <p>Las siguientes sesiones pueden incorporarse aquí manteniendo la misma estructura visual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- =====================================================
              EVIDENCIAS
         ====================================================== -->
-
-        <section
-            id="evidencias"
-            class="tab-section">
-
-
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-
-                <div class="max-w-3xl">
-
-                    <span
-                        class="text-indigo-600 font-semibold text-sm">
-
-                        PORTAFOLIO
-
-                    </span>
-
-
-                    <h1
-                        class="text-4xl font-bold text-slate-900 mt-2">
-
-                        Evidencias de aprendizaje
-
-                    </h1>
-
-
-                    <p
-                        class="mt-4 text-slate-600">
-
-                        Productos digitales desarrollados para integrar
-                        Matemática, Informática y tecnología educativa.
-
+        <section id="evidencias" class="page-section">
+            <div class="container section-space">
+                <div class="section-heading">
+                    <p class="eyebrow">03 · Portafolio</p>
+                    <h2>Evidencias de <span>aprendizaje</span></h2>
+                    <p>
+                        Productos y recursos digitales organizados por área de trabajo.
                     </p>
-
                 </div>
 
-
-                <!-- FILTROS -->
-
-                <div
-                    class="mt-8 flex flex-wrap gap-2">
-
-
-                    <button
-                        class="filter-btn px-4 py-2 rounded-lg bg-indigo-600 text-white"
-                        data-filter="todos">
-
-                        Todas
-
-                    </button>
-
-
-                    <button
-                        class="filter-btn px-4 py-2 rounded-lg bg-white border border-slate-200"
-                        data-filter="matematica">
-
-                        Matemática
-
-                    </button>
-
-
-                    <button
-                        class="filter-btn px-4 py-2 rounded-lg bg-white border border-slate-200"
-                        data-filter="informatica">
-
-                        Informática
-
-                    </button>
-
-
-                    <button
-                        class="filter-btn px-4 py-2 rounded-lg bg-white border border-slate-200"
-                        data-filter="ia">
-
-                        Inteligencia Artificial
-
-                    </button>
-
+                <div class="filter-bar" role="tablist" aria-label="Filtrar evidencias">
+                    <button class="filter-btn active" type="button" data-filter="all">Todas</button>
+                    <button class="filter-btn" type="button" data-filter="computacion">Computación</button>
+                    <button class="filter-btn" type="button" data-filter="programacion">Programación</button>
+                    <button class="filter-btn" type="button" data-filter="ia">IA</button>
                 </div>
 
-
-                <!-- GALERÍA -->
-
-                <div
-                    id="evidenceGrid"
-                    class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-
-
-                    <!-- MATEMÁTICA -->
-
-                    <article
-                        class="evidence-card bg-white rounded-2xl overflow-hidden shadow-academic"
-                        data-category="matematica">
-
-
-                        <div
-                            class="h-44 bg-indigo-100 flex items-center justify-center">
-
-                            <span
-                                class="text-indigo-700 font-bold text-3xl">
-
-                                ∑
-
-                            </span>
-
+                <div id="evidenceGrid" class="evidence-grid">
+                    <article class="evidence-card" data-category="computacion">
+                        <div class="evidence-visual visual-blue">
+                            <span class="visual-symbol">&lt;/&gt;</span>
+                            <span class="visual-label">COMPUTACIÓN</span>
                         </div>
-
-
-                        <div class="p-6">
-
-
-                            <span
-                                class="text-xs font-semibold text-indigo-600">
-
-                                MATEMÁTICA
-
-                            </span>
-
-
-                            <h2
-                                class="text-xl font-bold mt-2">
-
-                                Recursos matemáticos interactivos
-
-                            </h2>
-
-
-                            <p
-                                class="text-slate-600 text-sm mt-3">
-
-                                Actividades digitales para fortalecer el
-                                razonamiento matemático y la resolución
-                                de problemas.
-
-                            </p>
-
-
-                            <a
-                                href="#"
-                                class="inline-block mt-5 text-indigo-600 font-semibold text-sm">
-
-                                Ver evidencia →
-
-                            </a>
-
+                        <div class="evidence-body">
+                            <span class="card-tag">COMPUTACIÓN</span>
+                            <h3>Recursos digitales educativos</h3>
+                            <p>Diseño de recursos para acompañar actividades de aprendizaje en secundaria.</p>
+                            <button class="text-btn" type="button" data-section="sesiones">Ver contexto <span>→</span></button>
                         </div>
-
                     </article>
 
-
-                    <!-- INFORMÁTICA -->
-
-                    <article
-                        class="evidence-card bg-white rounded-2xl overflow-hidden shadow-academic"
-                        data-category="informatica">
-
-
-                        <div
-                            class="h-44 bg-emerald-100 flex items-center justify-center">
-
-                            <span
-                                class="text-emerald-700 font-bold text-3xl">
-
-                                &lt;/&gt;
-
-                            </span>
-
+                    <article class="evidence-card" data-category="programacion">
+                        <div class="evidence-visual visual-cyan">
+                            <span class="visual-symbol">{ }</span>
+                            <span class="visual-label">PROGRAMACIÓN</span>
                         </div>
-
-
-                        <div class="p-6">
-
-
-                            <span
-                                class="text-xs font-semibold text-emerald-600">
-
-                                INFORMÁTICA
-
-                            </span>
-
-
-                            <h2
-                                class="text-xl font-bold mt-2">
-
-                                Proyecto web educativo
-
-                            </h2>
-
-
-                            <p
-                                class="text-slate-600 text-sm mt-3">
-
-                                Desarrollo de una aplicación web educativa
-                                mediante HTML, CSS y JavaScript.
-
-                            </p>
-
-
-                            <a
-                                href="#"
-                                class="inline-block mt-5 text-emerald-600 font-semibold text-sm">
-
-                                Ver proyecto →
-
-                            </a>
-
+                        <div class="evidence-body">
+                            <span class="card-tag cyan-text">PROGRAMACIÓN</span>
+                            <h3>Proyecto web educativo</h3>
+                            <p>Desarrollo de una aplicación web educativa mediante HTML, CSS y JavaScript.</p>
+                            <span class="tech-stack"><b>HTML</b><b>CSS</b><b>JS</b></span>
                         </div>
-
                     </article>
 
-
-                    <!-- IA -->
-
-                    <article
-                        class="evidence-card bg-white rounded-2xl overflow-hidden shadow-academic"
-                        data-category="ia">
-
-
-                        <div
-                            class="h-44 bg-slate-200 flex items-center justify-center">
-
-                            <span
-                                class="text-slate-700 font-bold text-3xl">
-
-                                IA
-
-                            </span>
-
+                    <article class="evidence-card" data-category="ia">
+                        <div class="evidence-visual visual-orange">
+                            <span class="visual-symbol">AI</span>
+                            <span class="visual-label">INTELIGENCIA ARTIFICIAL</span>
                         </div>
-
-
-                        <div class="p-6">
-
-
-                            <span
-                                class="text-xs font-semibold text-slate-600">
-
-                                INTELIGENCIA ARTIFICIAL
-
-                            </span>
-
-
-                            <h2
-                                class="text-xl font-bold mt-2">
-
-                                Recurso educativo con IA
-
-                            </h2>
-
-
-                            <p
-                                class="text-slate-600 text-sm mt-3">
-
-                                Diseño de recursos y actividades mediante
-                                instrucciones estructuradas para
-                                herramientas de inteligencia artificial.
-
-                            </p>
-
-
-                            <a
-                                href="#"
-                                class="inline-block mt-5 text-slate-700 font-semibold text-sm">
-
-                                Ver evidencia →
-
-                            </a>
-
+                        <div class="evidence-body">
+                            <span class="card-tag orange-text">IA</span>
+                            <h3>Recurso educativo con IA</h3>
+                            <p>Diseño de actividades mediante instrucciones estructuradas y revisión de resultados.</p>
+                            <button class="text-btn orange-btn" type="button" data-section="ia">Ver trazabilidad <span>→</span></button>
                         </div>
-
                     </article>
 
-
-                    <!-- MATEMÁTICA 2 -->
-
-                    <article
-                        class="evidence-card bg-white rounded-2xl overflow-hidden shadow-academic"
-                        data-category="matematica">
-
-
-                        <div
-                            class="h-44 bg-indigo-100 flex items-center justify-center">
-
-                            <span
-                                class="text-indigo-700 font-bold text-3xl">
-
-                                x²
-
-                            </span>
-
+                    <article class="evidence-card" data-category="programacion">
+                        <div class="evidence-visual visual-dark">
+                            <span class="visual-symbol">JS</span>
+                            <span class="visual-label">CÓDIGO</span>
                         </div>
-
-
-                        <div class="p-6">
-
-
-                            <span
-                                class="text-xs font-semibold text-indigo-600">
-
-                                MATEMÁTICA
-
-                            </span>
-
-
-                            <h2
-                                class="text-xl font-bold mt-2">
-
-                                Álgebra y resolución de problemas
-
-                            </h2>
-
-
-                            <p
-                                class="text-slate-600 text-sm mt-3">
-
-                                Recurso interactivo para trabajar expresiones
-                                algebraicas y estrategias de resolución.
-
-                            </p>
-
+                        <div class="evidence-body">
+                            <span class="card-tag">PROGRAMACIÓN</span>
+                            <h3>Programación educativa</h3>
+                            <p>Aplicación de JavaScript para crear actividades web interactivas.</p>
+                            <span class="tech-stack"><b>DOM</b><b>EVENTOS</b><b>UI</b></span>
                         </div>
-
                     </article>
-
-
-                    <!-- INFORMÁTICA 2 -->
-
-                    <article
-                        class="evidence-card bg-white rounded-2xl overflow-hidden shadow-academic"
-                        data-category="informatica">
-
-
-                        <div
-                            class="h-44 bg-emerald-100 flex items-center justify-center">
-
-                            <span
-                                class="text-emerald-700 font-bold text-3xl">
-
-                                JS
-
-                            </span>
-
-                        </div>
-
-
-                        <div class="p-6">
-
-
-                            <span
-                                class="text-xs font-semibold text-emerald-600">
-
-                                INFORMÁTICA
-
-                            </span>
-
-
-                            <h2
-                                class="text-xl font-bold mt-2">
-
-                                Programación educativa
-
-                            </h2>
-
-
-                            <p
-                                class="text-slate-600 text-sm mt-3">
-
-                                Aplicación de JavaScript para crear
-                                actividades educativas interactivas.
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- IA 2 -->
-
-                    <article
-                        class="evidence-card bg-white rounded-2xl overflow-hidden shadow-academic"
-                        data-category="ia">
-
-
-                        <div
-                            class="h-44 bg-slate-200 flex items-center justify-center">
-
-                            <span
-                                class="text-slate-700 font-bold text-3xl">
-
-                                PROMPT
-
-                            </span>
-
-                        </div>
-
-
-                        <div class="p-6">
-
-
-                            <span
-                                class="text-xs font-semibold text-slate-600">
-
-                                INTELIGENCIA ARTIFICIAL
-
-                            </span>
-
-
-                            <h2
-                                class="text-xl font-bold mt-2">
-
-                                Ingeniería de prompts educativos
-
-                            </h2>
-
-
-                            <p
-                                class="text-slate-600 text-sm mt-3">
-
-                                Diseño de instrucciones para obtener
-                                resultados útiles y pertinentes para
-                                actividades educativas.
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
                 </div>
 
+                <div id="emptyEvidence" class="empty-state" hidden>
+                    No hay evidencias para este filtro.
+                </div>
             </div>
-
         </section>
 
-
         <!-- =====================================================
-             MATRIZ IA
+             IA ÉTICA
         ====================================================== -->
-
-        <section
-            id="matriz"
-            class="tab-section">
-
-
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-
-                <div class="max-w-4xl">
-
-
-                    <span
-                        class="text-emerald-600 font-semibold text-sm">
-
-                        DOCUMENTACIÓN DEL PROCESO
-
-                    </span>
-
-
-                    <h1
-                        class="text-4xl font-bold text-slate-900 mt-2">
-
-                        Matriz Sintética de IA
-
-                    </h1>
-
-
-                    <p
-                        class="mt-4 text-slate-600 leading-relaxed">
-
-                        Registro de las herramientas de inteligencia
-                        artificial utilizadas durante el desarrollo
-                        del proyecto, indicando su propósito pedagógico
-                        y las instrucciones empleadas.
-
+        <section id="ia" class="page-section">
+            <div class="container section-space">
+                <div class="section-heading">
+                    <p class="eyebrow">04 · Transparencia</p>
+                    <h2>Matriz de uso <span>ético de IA</span></h2>
+                    <p>
+                        Registro de herramientas, propósito y prompts utilizados durante el desarrollo del portafolio.
                     </p>
-
                 </div>
 
-
-                <!-- BUSCADOR -->
-
-                <div class="mt-8">
-
-
-                    <label
-                        for="iaSearch"
-                        class="block text-sm font-semibold text-slate-700 mb-2">
-
-                        Buscar en la matriz
-
-                    </label>
-
-
-                    <input
-                        id="iaSearch"
-                        type="search"
-                        placeholder="Buscar herramienta, propósito o prompt..."
-                        class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-
-                </div>
-
-
-                <!-- TABLA -->
-
-                <div
-                    class="mt-6 bg-white rounded-2xl shadow-academic overflow-hidden">
-
-
-                    <div class="overflow-x-auto">
-
-
-                        <table class="w-full text-left">
-
-
-                            <thead
-                                class="bg-slate-900 text-white">
-
-
-                                <tr>
-
-                                    <th
-                                        class="px-6 py-4 text-sm font-semibold">
-
-                                        Herramienta de IA
-
-                                    </th>
-
-
-                                    <th
-                                        class="px-6 py-4 text-sm font-semibold">
-
-                                        Uso / Propósito Pedagógico
-
-                                    </th>
-
-
-                                    <th
-                                        class="px-6 py-4 text-sm font-semibold min-w-[350px]">
-
-                                        Prompt / Instrucción exacta
-
-                                    </th>
-
-
-                                    <th
-                                        class="px-6 py-4 text-sm font-semibold">
-
-                                        Acción
-
-                                    </th>
-
-                                </tr>
-
-                            </thead>
-
-
-                            <tbody
-                                id="iaTableBody"
-                                class="divide-y divide-slate-200">
-
-
-                                <!-- CHATGPT -->
-
-                                <tr
-                                    class="ia-row"
-                                    data-search="chatgpt matemática informática recurso educativo prompt">
-
-
-                                    <td
-                                        class="px-6 py-5 font-semibold text-slate-900">
-
-                                        ChatGPT
-
-                                    </td>
-
-
-                                    <td
-                                        class="px-6 py-5 text-slate-600">
-
-                                        Diseño y planificación de recursos
-                                        educativos digitales para Matemática
-                                        e Informática.
-
-                                    </td>
-
-
-                                    <td class="px-6 py-5">
-
-
-                                        <code
-                                            class="prompt-text block bg-slate-100 rounded-lg p-4 text-sm text-slate-700">
-
-                                            Diseña un recurso educativo
-                                            interactivo para estudiantes de
-                                            secundaria que permita trabajar
-                                            un tema de Matemática mediante
-                                            tecnología digital.
-
-                                        </code>
-
-                                    </td>
-
-
-                                    <td class="px-6 py-5">
-
-
-                                        <button
-                                            class="copy-button px-3 py-2 rounded-lg bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                                            onclick="copyPrompt(this)">
-
-                                            Copiar
-
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-
-                                <!-- GEMINI -->
-
-                                <tr
-                                    class="ia-row"
-                                    data-search="gemini matemáticas actividad ideas recurso educativo">
-
-
-                                    <td
-                                        class="px-6 py-5 font-semibold text-slate-900">
-
-                                        Gemini
-
-                                    </td>
-
-
-                                    <td
-                                        class="px-6 py-5 text-slate-600">
-
-                                        Generación de ideas para actividades
-                                        y recursos de aprendizaje.
-
-                                    </td>
-
-
-                                    <td class="px-6 py-5">
-
-
-                                        <code
-                                            class="prompt-text block bg-slate-100 rounded-lg p-4 text-sm text-slate-700">
-
-                                            Propón cinco actividades
-                                            interactivas para enseñar
-                                            Matemática en educación
-                                            secundaria utilizando recursos
-                                            digitales.
-
-                                        </code>
-
-                                    </td>
-
-
-                                    <td class="px-6 py-5">
-
-
-                                        <button
-                                            class="copy-button px-3 py-2 rounded-lg bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                                            onclick="copyPrompt(this)">
-
-                                            Copiar
-
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-
-                                <!-- COPILOT -->
-
-                                <tr
-                                    class="ia-row"
-                                    data-search="copilot programación html css javascript informática">
-
-
-                                    <td
-                                        class="px-6 py-5 font-semibold text-slate-900">
-
-                                        Microsoft Copilot
-
-                                    </td>
-
-
-                                    <td
-                                        class="px-6 py-5 text-slate-600">
-
-                                        Apoyo en la revisión y desarrollo
-                                        de código para recursos educativos.
-
-                                    </td>
-
-
-                                    <td class="px-6 py-5">
-
-
-                                        <code
-                                            class="prompt-text block bg-slate-100 rounded-lg p-4 text-sm text-slate-700">
-
-                                            Revisa este código HTML, CSS y
-                                            JavaScript y propón mejoras para
-                                            que sea accesible, responsive y
-                                            adecuado para estudiantes.
-
-                                        </code>
-
-                                    </td>
-
-
-                                    <td class="px-6 py-5">
-
-
-                                        <button
-                                            class="copy-button px-3 py-2 rounded-lg bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                                            onclick="copyPrompt(this)">
-
-                                            Copiar
-
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-
-                    <div
-                        id="noResults"
-                        class="hidden p-8 text-center text-slate-500">
-
-                        No se encontraron resultados.
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRINCIPIOS -->
-
-                <div
-                    class="mt-8 grid md:grid-cols-3 gap-5">
-
-
-                    <div
-                        class="bg-emerald-50 border border-emerald-100 rounded-xl p-6">
-
-
-                        <h2
-                            class="font-bold text-emerald-800">
-
-                            Transparencia
-
-                        </h2>
-
-
-                        <p
-                            class="mt-2 text-sm text-emerald-700">
-
-                            Registrar las herramientas y prompts empleados
-                            durante el desarrollo del proyecto.
-
-                        </p>
-
-                    </div>
-
-
-                    <div
-                        class="bg-indigo-50 border border-indigo-100 rounded-xl p-6">
-
-
-                        <h2
-                            class="font-bold text-indigo-800">
-
-                            Verificación
-
-                        </h2>
-
-
-                        <p
-                            class="mt-2 text-sm text-indigo-700">
-
-                            Revisar y contrastar los resultados generados
-                            antes de utilizarlos con fines educativos.
-
-                        </p>
-
-                    </div>
-
-
-                    <div
-                        class="bg-slate-100 border border-slate-200 rounded-xl p-6">
-
-
-                        <h2
-                            class="font-bold text-slate-800">
-
-                            Responsabilidad
-
-                        </h2>
-
-
-                        <p
-                            class="mt-2 text-sm text-slate-600">
-
-                            Mantener la responsabilidad del autor sobre
-                            las decisiones, contenidos y productos finales.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             EQUIPO
-        ====================================================== -->
-
-        <section
-            id="equipo"
-            class="tab-section">
-
-
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-
-                <div class="max-w-3xl">
-
-
-                    <span
-                        class="text-indigo-600 font-semibold text-sm">
-
-                        TRABAJO COLABORATIVO
-
-                    </span>
-
-
-                    <h1
-                        class="text-4xl font-bold text-slate-900 mt-2">
-
-                        Equipo & Sustentación
-
-                    </h1>
-
-
-                    <p
-                        class="mt-4 text-slate-600">
-
-                        Integrantes, responsabilidades y documentación
-                        correspondiente al proyecto.
-
-                    </p>
-
-                </div>
-
-
-                <!-- EQUIPO -->
-
-                <div
-                    class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-
-
-                    <!-- INTEGRANTE PRINCIPAL -->
-
-                    <article
-                        class="bg-white rounded-2xl p-7 shadow-academic">
-
-
-                        <div
-                            class="w-16 h-16 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xl">
-
-                            GE
-
-                        </div>
-
-
-                        <h2
-                            class="text-xl font-bold mt-5">
-
-                            Gerson David Eheyen Guarnizo
-
-                        </h2>
-
-
-                        <p
-                            class="text-indigo-600 font-semibold text-sm mt-1">
-
-                            Desarrollo y coordinación
-
-                        </p>
-
-
-                        <p
-                            class="text-slate-600 text-sm mt-4 leading-relaxed">
-
-                            Responsable de la organización del portafolio,
-                            desarrollo de la propuesta digital y
-                            presentación del proyecto.
-
-                        </p>
-
+                <div class="ia-principles">
+                    <article>
+                        <span>01</span>
+                        <div><h3>Trazabilidad</h3><p>Registrar qué herramienta se utilizó y con qué propósito.</p></div>
                     </article>
-
-
-                    <!-- INTEGRANTE 2 -->
-
-                    <article
-                        class="bg-white rounded-2xl p-7 shadow-academic">
-
-
-                        <div
-                            class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl">
-
-                            I2
-
-                        </div>
-
-
-                        <h2
-                            class="text-xl font-bold mt-5">
-
-                            Integrante 2
-
-                        </h2>
-
-
-                        <p
-                            class="text-emerald-600 font-semibold text-sm mt-1">
-
-                            Investigación
-
-                        </p>
-
-
-                        <p
-                            class="text-slate-600 text-sm mt-4 leading-relaxed">
-
-                            Responsable de la recopilación de información,
-                            análisis y elaboración de contenidos.
-
-                        </p>
-
+                    <article>
+                        <span>02</span>
+                        <div><h3>Verificación</h3><p>Contrastar la información generada antes de incorporarla al proyecto.</p></div>
                     </article>
-
-
-                    <!-- INTEGRANTE 3 -->
-
-                    <article
-                        class="bg-white rounded-2xl p-7 shadow-academic">
-
-
-                        <div
-                            class="w-16 h-16 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xl">
-
-                            I3
-
-                        </div>
-
-
-                        <h2
-                            class="text-xl font-bold mt-5">
-
-                            Integrante 3
-
-                        </h2>
-
-
-                        <p
-                            class="text-slate-600 font-semibold text-sm mt-1">
-
-                            Diseño y sustentación
-
-                        </p>
-
-
-                        <p
-                            class="text-slate-600 text-sm mt-4 leading-relaxed">
-
-                            Responsable del diseño de evidencias y apoyo
-                            durante la sustentación.
-
-                        </p>
-
+                    <article>
+                        <span>03</span>
+                        <div><h3>Autoría</h3><p>Mantener responsabilidad sobre las decisiones y productos finales.</p></div>
                     </article>
-
                 </div>
 
-
-                <!-- PDF -->
-
-                <div
-                    class="mt-12 bg-slate-900 rounded-2xl p-8 text-white">
-
-
-                    <div
-                        class="grid lg:grid-cols-2 gap-10 items-center">
-
-
+                <div class="table-card">
+                    <div class="table-toolbar">
                         <div>
-
-
-                            <span
-                                class="text-emerald-400 font-semibold text-sm">
-
-                                DOCUMENTACIÓN FINAL
-
-                            </span>
-
-
-                            <h2
-                                class="text-3xl font-bold mt-2">
-
-                                Informe de sustentación
-
-                            </h2>
-
-
-                            <p
-                                class="mt-4 text-slate-300 leading-relaxed">
-
-                                Documento que reúne el desarrollo,
-                                evidencias, metodología y sustentación
-                                del proyecto educativo digital.
-
-                            </p>
-
+                            <span class="table-title">Matriz sintética</span>
+                            <small>Busca por herramienta, uso o prompt.</small>
                         </div>
-
-
-                        <div class="lg:text-right">
-
-
-                            <!--
-                                Coloca aquí el nombre real del PDF.
-                                Ejemplo:
-                                documentos/informe-sustentacion.pdf
-                            -->
-
-                            <a
-                                href="documentos/informe-sustentacion.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-semibold transition">
-
-                                Ver informe PDF
-
-                            </a>
-
-                        </div>
-
+                        <label class="search-box">
+                            <span>⌕</span>
+                            <input id="iaSearch" type="search" placeholder="Buscar en la matriz..." autocomplete="off">
+                        </label>
                     </div>
 
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Herramienta</th>
+                                    <th>Uso / propósito</th>
+                                    <th>Prompt / instrucción</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="iaTableBody">
+                                <tr class="ia-row" data-search="chatgpt computación recurso educativo programación actividad">
+                                    <td><strong>ChatGPT</strong><span class="tool-type">IA generativa</span></td>
+                                    <td>Diseño y planificación de recursos educativos digitales para EPT — Computación.</td>
+                                    <td><code class="prompt-text">Diseña un recurso educativo interactivo para estudiantes de secundaria que permita aprender un concepto de computación mediante una actividad práctica y digital.</code></td>
+                                    <td><button class="copy-btn" type="button">Copiar</button></td>
+                                </tr>
+
+                                <tr class="ia-row" data-search="gemini computación actividad ideas recurso educativo">
+                                    <td><strong>Gemini</strong><span class="tool-type">IA generativa</span></td>
+                                    <td>Generación de ideas para actividades y recursos de aprendizaje.</td>
+                                    <td><code class="prompt-text">Propón cinco actividades prácticas para enseñar computación en educación secundaria utilizando recursos digitales accesibles.</code></td>
+                                    <td><button class="copy-btn" type="button">Copiar</button></td>
+                                </tr>
+
+                                <tr class="ia-row" data-search="copilot programación html css javascript informática código">
+                                    <td><strong>Microsoft Copilot</strong><span class="tool-type">Asistente de código</span></td>
+                                    <td>Apoyo en la revisión y desarrollo de código para recursos educativos.</td>
+                                    <td><code class="prompt-text">Revisa este código HTML, CSS y JavaScript y propón mejoras para que sea accesible, responsive y adecuado para estudiantes de secundaria.</code></td>
+                                    <td><button class="copy-btn" type="button">Copiar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="noResults" class="no-results" hidden>No se encontraron resultados.</div>
                 </div>
-
             </div>
-
         </section>
 
+        <!-- =====================================================
+             SUSTENTACIÓN
+        ====================================================== -->
+        <section id="sustentacion" class="page-section">
+            <div class="container section-space">
+                <div class="section-heading">
+                    <p class="eyebrow">05 · Presentación</p>
+                    <h2>Sustentación y <span>documentación</span></h2>
+                    <p>
+                        La estructura del portafolio está preparada para evidenciar funcionalidad,
+                        coherencia metodológica, uso ético de IA y organización del trabajo.
+                    </p>
+                </div>
+
+                <div class="rubric-grid">
+                    <article><span>01</span><h3>Arquitectura digital</h3><p>Navegación clara, diseño responsive y enlaces organizados.</p></article>
+                    <article><span>02</span><h3>Articulación metodológica</h3><p>Relación entre perfil, propósito, sesiones y evidencias.</p></article>
+                    <article><span>03</span><h3>IA ética</h3><p>Matriz de prompts, trazabilidad y criterios de verificación.</p></article>
+                    <article><span>04</span><h3>Sustentación oral</h3><p>Contenido organizado para explicar el proyecto durante la exposición.</p></article>
+                    <article><span>05</span><h3>Trabajo colaborativo</h3><p>Espacio para integrar integrantes, roles y documentación final.</p></article>
+                </div>
+
+                <div class="document-panel">
+                    <div class="document-icon">PDF</div>
+                    <div>
+                        <span class="eyebrow light">DOCUMENTACIÓN FINAL</span>
+                        <h3>Informe de sustentación</h3>
+                        <p>Coloca el PDF final dentro de <code>documentos/</code> y actualiza el enlace en este archivo.</p>
+                    </div>
+                    <a class="btn btn-primary" href="documentos/informe-sustentacion.pdf" target="_blank" rel="noopener noreferrer">
+                        Ver informe <span>↗</span>
+                    </a>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-heading">
+                        <div>
+                            <span class="eyebrow">Equipo</span>
+                            <h3>Participación y responsabilidades</h3>
+                        </div>
+                        <span class="team-badge">EPT · COMPUTACIÓN</span>
+                    </div>
+
+                    <div class="team-grid">
+                        <article>
+                            <div class="team-avatar">GE</div>
+                            <div><strong>Gerson David Eheyen Guarnizo</strong><span>Desarrollo y coordinación</span></div>
+                        </article>
+                        <article>
+                            <div class="team-avatar muted">I2</div>
+                            <div><strong>Integrante 2</strong><span>Investigación</span></div>
+                        </article>
+                        <article>
+                            <div class="team-avatar muted">I3</div>
+                            <div><strong>Integrante 3</strong><span>Diseño y sustentación</span></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer
-        class="bg-white border-t border-slate-200">
-
-
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-
-            <div
-                class="flex flex-col md:flex-row justify-between gap-4">
-
-
-                <div>
-
-                    <p
-                        class="font-bold text-slate-900">
-
-                        Portafolio Educativo Digital
-
-                    </p>
-
-
-                    <p
-                        class="text-sm text-slate-500 mt-1">
-
-                        Educación Secundaria · Matemática e Informática
-
-                    </p>
-
-                </div>
-
-
-                <p
-                    class="text-sm text-slate-500">
-
-                    Proyecto académico · 2026
-
-                </p>
-
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <strong>Portafolio EPT · Computación</strong>
+                <p>Gerson David Eheyen Guarnizo</p>
             </div>
-
+            <div class="footer-career">
+                <span>Carrera</span>
+                <strong>Educación Secundaria con mención en Matemática e Informática</strong>
+            </div>
+            <p class="footer-year">2026</p>
         </div>
-
     </footer>
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <script>
-
-
-        /* =====================================================
-           NAVEGACIÓN SPA
-        ====================================================== */
-
-        function showSection(sectionId) {
-
-
-            const sections =
-                document.querySelectorAll(".tab-section");
-
-
-            sections.forEach(section => {
-
-                section.classList.remove("active");
-
-            });
-
-
-            const selectedSection =
-                document.getElementById(sectionId);
-
-
-            if (selectedSection) {
-
-                selectedSection.classList.add("active");
-
-            }
-
-
-            const navLinks =
-                document.querySelectorAll(".nav-link");
-
-
-            navLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-            });
-
-
-            navLinks.forEach(link => {
-
-
-                const onclickValue =
-                    link.getAttribute("onclick");
-
-
-                if (
-                    onclickValue &&
-                    onclickValue.includes(`'${sectionId}'`)
-                ) {
-
-                    link.classList.add("active");
-
-                }
-
-            });
-
-
-            const mobileMenu =
-                document.getElementById("mobileMenu");
-
-
-            mobileMenu.classList.remove("open");
-
-
-            const menuButton =
-                document.getElementById("menuButton");
-
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-
-            window.scrollTo({
-
-                top: 0,
-                behavior: "smooth"
-
-            });
-
-        }
-
-
-        /* =====================================================
-           MENÚ MÓVIL
-        ====================================================== */
-
-        function toggleMobileMenu() {
-
-
-            const mobileMenu =
-                document.getElementById("mobileMenu");
-
-
-            const menuButton =
-                document.getElementById("menuButton");
-
-
-            mobileMenu.classList.toggle("open");
-
-
-            const isOpen =
-                mobileMenu.classList.contains("open");
-
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-        }
-
-
-        /* =====================================================
-           FILTRO DE EVIDENCIAS
-        ====================================================== */
-
-        const filterButtons =
-            document.querySelectorAll(".filter-btn");
-
-
-        const evidenceCards =
-            document.querySelectorAll(".evidence-card");
-
-
-        filterButtons.forEach(button => {
-
-
-            button.addEventListener("click", () => {
-
-
-                const filter =
-                    button.dataset.filter;
-
-
-                filterButtons.forEach(btn => {
-
-
-                    btn.classList.remove(
-                        "bg-indigo-600",
-                        "text-white"
-                    );
-
-
-                    btn.classList.add(
-                        "bg-white",
-                        "border",
-                        "border-slate-200"
-                    );
-
-                });
-
-
-                button.classList.remove(
-                    "bg-white",
-                    "border",
-                    "border-slate-200"
-                );
-
-
-                button.classList.add(
-                    "bg-indigo-600",
-                    "text-white"
-                );
-
-
-                evidenceCards.forEach(card => {
-
-
-                    const category =
-                        card.dataset.category;
-
-
-                    if (
-                        filter === "todos" ||
-                        category === filter
-                    ) {
-
-                        card.style.display = "block";
-
-                    } else {
-
-                        card.style.display = "none";
-
-                    }
-
-                });
-
-            });
-
-        });
-
-
-        /* =====================================================
-           BUSCADOR MATRIZ IA
-        ====================================================== */
-
-        const iaSearch =
-            document.getElementById("iaSearch");
-
-
-        const iaRows =
-            document.querySelectorAll(".ia-row");
-
-
-        const noResults =
-            document.getElementById("noResults");
-
-
-        iaSearch.addEventListener("input", () => {
-
-
-            const search =
-                iaSearch.value
-                    .toLowerCase()
-                    .trim();
-
-
-            let visibleRows = 0;
-
-
-            iaRows.forEach(row => {
-
-
-                const searchableText =
-                    row.dataset.search.toLowerCase();
-
-
-                if (
-                    search === "" ||
-                    searchableText.includes(search)
-                ) {
-
-                    row.style.display = "table-row";
-
-                    visibleRows++;
-
-                } else {
-
-                    row.style.display = "none";
-
-                }
-
-            });
-
-
-            if (visibleRows === 0) {
-
-                noResults.classList.remove("hidden");
-
-            } else {
-
-                noResults.classList.add("hidden");
-
-            }
-
-        });
-
-
-        /* =====================================================
-           COPIAR PROMPT
-        ====================================================== */
-
-        async function copyPrompt(button) {
-
-
-            const row =
-                button.closest("tr");
-
-
-            const prompt =
-                row.querySelector(".prompt-text")
-                    .innerText;
-
-
-            try {
-
-
-                await navigator.clipboard.writeText(prompt);
-
-
-                const originalText =
-                    button.innerText;
-
-
-                button.innerText =
-                    "¡Copiado!";
-
-
-                button.classList.add("copied");
-
-
-                setTimeout(() => {
-
-
-                    button.innerText =
-                        originalText;
-
-
-                    button.classList.remove(
-                        "copied"
-                    );
-
-
-                }, 1500);
-
-
-            } catch (error) {
-
-
-                const textArea =
-                    document.createElement("textarea");
-
-
-                textArea.value =
-                    prompt;
-
-
-                document.body.appendChild(
-                    textArea
-                );
-
-
-                textArea.select();
-
-
-                document.execCommand("copy");
-
-
-                document.body.removeChild(
-                    textArea
-                );
-
-
-                button.innerText =
-                    "¡Copiado!";
-
-
-                setTimeout(() => {
-
-
-                    button.innerText =
-                        "Copiar";
-
-
-                }, 1500);
-
-            }
-
-        }
-
-    </script>
-
+    <script src="js/script.js"></script>
 </body>
-
 </html>
