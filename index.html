@@ -1,572 +1,2220 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio Educativo Digital de Gerson David Eheyen Guarnizo — EPT Computación.">
-    <meta name="theme-color" content="#0b1220">
-    <title>Portafolio EPT | Computación — Gerson David Eheyen</title>
 
-    <!-- Tipografías: sans moderna + monoespaciada para el lenguaje computacional -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Portafolio Educativo Digital de Gerson David Eheyen Guarnizo">
+
+    <title>Portafolio Educativo Digital | Gerson Eheyen</title>
+
+    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <!-- =========================================================
+
+    <!-- =====================================================
          PANTALLA DE CARGA
-    ========================================================== -->
-    <div id="loader" class="loader" aria-label="Cargando portafolio">
+    ====================================================== -->
+
+    <div id="loader" class="loader">
+
         <div class="loader-grid"></div>
-        <div class="loader-content">
-            <div class="loader-logo" aria-hidden="true">
-                <span>GE</span>
-                <i></i>
+
+        <div class="loader-card">
+
+            <div class="loader-mark">
+                GE
             </div>
 
-            <p class="eyebrow loader-eyebrow">PORTAFOLIO EDUCATIVO DIGITAL</p>
-            <h1>EPT · <span>COMPUTACIÓN</span></h1>
-            <p class="loader-name">Gerson David Eheyen Guarnizo</p>
+            <span class="eyebrow">
+                PORTAFOLIO EDUCATIVO DIGITAL
+            </span>
 
-            <div class="loader-career">
-                <span class="loader-icon">&lt;/&gt;</span>
-                <div>
-                    <small>Carrera profesional</small>
-                    <strong>Educación Secundaria con mención en Matemática e Informática</strong>
-                </div>
-            </div>
+            <h1>
+                EPT · COMPUTACIÓN
+            </h1>
 
-            <div class="loader-progress" aria-hidden="true">
+            <p>
+                Gerson David Eheyen Guarnizo
+            </p>
+
+            <small>
+                Educación Secundaria con mención en
+                Matemática e Informática
+            </small>
+
+            <div class="progress">
                 <span></span>
             </div>
-            <p class="loader-status">Preparando experiencia digital...</p>
+
+            <div class="loader-status">
+                Preparando experiencia digital...
+            </div>
+
         </div>
+
     </div>
 
-    <!-- =========================================================
-         NAVEGACIÓN
-    ========================================================== -->
+
+    <!-- =====================================================
+         ENCABEZADO
+    ====================================================== -->
+
     <header class="site-header">
-        <nav class="nav container" aria-label="Navegación principal">
-            <button class="brand" type="button" data-section="inicio" aria-label="Ir al inicio">
-                <span class="brand-mark">GE</span>
-                <span class="brand-copy">
-                    <strong>Portafolio <em>EPT</em></strong>
-                    <small>Computación</small>
-                </span>
-            </button>
 
-            <button id="menuToggle" class="menu-toggle" type="button"
-                    aria-label="Abrir menú" aria-controls="mainMenu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+        <a href="#inicio" class="brand nav-link">
 
-            <div id="mainMenu" class="nav-menu">
-                <button class="nav-link active" type="button" data-section="inicio">Inicio</button>
-                <button class="nav-link" type="button" data-section="docente">Docente</button>
-                <button class="nav-link" type="button" data-section="sesiones">Sesiones</button>
-                <button class="nav-link" type="button" data-section="evidencias">Evidencias</button>
-                <button class="nav-link" type="button" data-section="ia">IA ética</button>
-                <button class="nav-link" type="button" data-section="sustentacion">Sustentación</button>
-            </div>
+            <span class="brand-mark">
+                GE
+            </span>
+
+            <span>
+                <strong>Portafolio</strong>
+                <small>Educativo Digital</small>
+            </span>
+
+        </a>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menú"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+
+        <nav
+            id="mainNav"
+            class="main-nav"
+            aria-label="Navegación principal">
+
+            <a href="#inicio" class="nav-link active">
+                Inicio
+            </a>
+
+            <a href="#perfil" class="nav-link">
+                Perfil docente
+            </a>
+
+            <a href="#sesiones" class="nav-link">
+                Sesiones
+            </a>
+
+            <a href="#proyecto" class="nav-link">
+                Proyecto
+            </a>
+
+            <a href="#evidencias" class="nav-link">
+                Evidencias
+            </a>
+
+            <a href="#ia" class="nav-link">
+                IA generativa
+            </a>
+
+            <a href="#reflexion" class="nav-link">
+                Reflexión ética
+            </a>
+
+            <a href="#sustentacion" class="nav-link">
+                Sustentación
+            </a>
+
+            <a href="#contacto" class="nav-link">
+                Contacto
+            </a>
+
         </nav>
+
     </header>
 
+
     <main>
+
+
         <!-- =====================================================
-             INICIO — PRESENTACIÓN DEL DOCENTE
+             INICIO
         ====================================================== -->
-        <section id="inicio" class="page-section active">
-            <div class="hero">
-                <div class="hero-glow hero-glow-one"></div>
-                <div class="hero-glow hero-glow-two"></div>
 
-                <div class="container hero-grid">
-                    <div class="hero-copy">
-                        <div class="hero-badge">
-                            <span class="pulse-dot"></span>
-                            PORTAFOLIO EPT · COMPUTACIÓN
-                        </div>
+        <section id="inicio" class="section hero-section">
 
-                        <p class="hero-kicker">Presentación del docente</p>
+            <div class="hero-copy">
 
-                        <h1>
-                            Gerson David
-                            <span>Eheyen Guarnizo</span>
-                        </h1>
+                <span class="eyebrow">
+                    EDUCACIÓN · MATEMÁTICA · INFORMÁTICA
+                </span>
 
-                        <p class="hero-lead">
-                            Docente en formación orientado al desarrollo de la competencia digital,
-                            el pensamiento computacional y la creación de experiencias de aprendizaje
-                            mediante tecnología.
+                <h1>
+                    Portafolio
+                    <br>
+                    <span>Educativo Digital</span>
+                </h1>
+
+                <p class="hero-lead">
+
+                    Un espacio digital para presentar mi formación,
+                    experiencias de aprendizaje, recursos tecnológicos,
+                    evidencias y uso responsable de inteligencia artificial
+                    como futuro docente.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#perfil"
+                        class="btn btn-primary nav-link">
+
+                        Conocer mi perfil
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a
+                        href="#sesiones"
+                        class="btn btn-secondary nav-link">
+
+                        Explorar sesiones
+
+                    </a>
+
+                </div>
+
+
+                <div class="hero-meta">
+
+                    <div>
+
+                        <span>
+                            Autor
+                        </span>
+
+                        <strong>
+                            Gerson David Eheyen Guarnizo
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Carrera
+                        </span>
+
+                        <strong>
+                            Educación Secundaria ·
+                            Matemática e Informática
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-orbit"></div>
+
+                <div class="hero-card-inner">
+
+                    <span class="card-label">
+                        PORTAFOLIO DOCENTE
+                    </span>
+
+                    <div class="big-ge">
+                        GE
+                    </div>
+
+                    <h2>
+                        Matemática
+                        <br>
+                        &amp; Informática
+                    </h2>
+
+                    <p>
+                        Las TIC Aplicadas a la Educación
+                    </p>
+
+
+                    <div class="hero-tags">
+
+                        <span>TIC</span>
+                        <span>IA</span>
+                        <span>EDUCACIÓN</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PERFIL DOCENTE
+        ====================================================== -->
+
+        <section id="perfil" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        MI IDENTIDAD PROFESIONAL
+                    </span>
+
+                    <h2>
+                        Perfil docente
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-grid">
+
+
+                <article class="profile-intro panel">
+
+                    <div class="avatar">
+                        GE
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            FUTURO DOCENTE
+                        </span>
+
+                        <h3>
+                            Gerson David Eheyen Guarnizo
+                        </h3>
+
+                        <p>
+                            Educación Secundaria con mención
+                            en Matemática e Informática
                         </p>
 
-                        <div class="hero-actions">
-                            <button class="btn btn-primary" type="button" data-section="docente">
-                                Conocer al docente
-                                <span>→</span>
-                            </button>
-                            <button class="btn btn-ghost" type="button" data-section="evidencias">
-                                Ver evidencias
-                            </button>
-                        </div>
-
-                        <div class="hero-meta">
-                            <div>
-                                <span>Área</span>
-                                <strong>EPT · Computación</strong>
-                            </div>
-                            <div>
-                                <span>Nivel</span>
-                                <strong>Educación Secundaria</strong>
-                            </div>
-                            <div>
-                                <span>Enfoque</span>
-                                <strong>Crear · Programar · Resolver</strong>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="teacher-card">
-                        <div class="teacher-card-top">
-                            <span class="status-chip"><i></i> Docente en formación</span>
-                            <span class="code-chip">&lt;EPT/&gt;</span>
-                        </div>
+                </article>
 
-                        <div class="avatar">
-                            <span>GE</span>
-                        </div>
 
-                        <h2>Gerson David Eheyen Guarnizo</h2>
-                        <p class="teacher-role">Educación Secundaria · Matemática e Informática</p>
+                <article class="panel text-panel">
 
-                        <div class="teacher-line"></div>
+                    <h3>
+                        Presentación
+                    </h3>
 
-                        <div class="teacher-info">
-                            <div>
-                                <span class="info-icon">01</span>
-                                <p><small>Área de trabajo</small><strong>EPT — Computación</strong></p>
-                            </div>
-                            <div>
-                                <span class="info-icon">02</span>
-                                <p><small>Competencia</small><strong>Competencia digital</strong></p>
-                            </div>
-                            <div>
-                                <span class="info-icon">03</span>
-                                <p><small>Propósito</small><strong>Aprender haciendo</strong></p>
-                            </div>
-                        </div>
-
-                        <div class="terminal-mini">
-                            <span>$</span> diseñar_aprendizaje<span class="cursor">_</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container section-space">
-                <div class="section-heading centered">
-                    <p class="eyebrow">Identidad académica</p>
-                    <h2>Una propuesta centrada en <span>Computación</span></h2>
                     <p>
-                        El portafolio organiza el trabajo del docente, las sesiones,
-                        las evidencias y el uso responsable de inteligencia artificial
-                        en un mismo espacio digital.
+
+                        Soy estudiante de Educación Secundaria
+                        con mención en Matemática e Informática.
+                        Este portafolio representa un espacio
+                        para organizar y presentar evidencias
+                        de mi formación docente, experiencias
+                        de aprendizaje, recursos digitales y
+                        proyectos educativos.
+
                     </p>
-                </div>
 
-                <div class="feature-grid">
-                    <article class="feature-card">
-                        <div class="feature-icon blue">&lt;/&gt;</div>
-                        <div>
-                            <h3>Computación educativa</h3>
-                            <p>Uso pedagógico de herramientas digitales, programación y recursos tecnológicos.</p>
-                        </div>
-                    </article>
 
-                    <article class="feature-card">
-                        <div class="feature-icon orange">✦</div>
-                        <div>
-                            <h3>Aprendizaje activo</h3>
-                            <p>Actividades prácticas orientadas a crear, experimentar, resolver y comunicar.</p>
-                        </div>
-                    </article>
+                    <p>
 
-                    <article class="feature-card">
-                        <div class="feature-icon cyan">AI</div>
-                        <div>
-                            <h3>IA con criterio</h3>
-                            <p>Documentación, verificación y trazabilidad del uso de herramientas generativas.</p>
-                        </div>
-                    </article>
-                </div>
+                        Mi interés se centra en integrar la
+                        Matemática, la Informática y las tecnologías
+                        digitales para desarrollar experiencias
+                        de aprendizaje significativas, promoviendo
+                        el pensamiento lógico, la creatividad y
+                        el uso responsable de la tecnología.
+
+                    </p>
+
+                </article>
+
             </div>
+
+
+            <div class="cards-4">
+
+
+                <article class="mini-card">
+
+                    <span>📐</span>
+
+                    <h3>
+                        Matemática
+                    </h3>
+
+                    <p>
+                        Desarrollo del pensamiento lógico
+                        y resolución de problemas.
+                    </p>
+
+                </article>
+
+
+                <article class="mini-card">
+
+                    <span>💻</span>
+
+                    <h3>
+                        Informática
+                    </h3>
+
+                    <p>
+                        Programación, recursos digitales
+                        y desarrollo tecnológico.
+                    </p>
+
+                </article>
+
+
+                <article class="mini-card">
+
+                    <span>🎓</span>
+
+                    <h3>
+                        Educación
+                    </h3>
+
+                    <p>
+                        Diseño de experiencias y recursos
+                        para el aprendizaje.
+                    </p>
+
+                </article>
+
+
+                <article class="mini-card">
+
+                    <span>🤖</span>
+
+                    <h3>
+                        Tecnología e IA
+                    </h3>
+
+                    <p>
+                        Uso pedagógico, crítico y responsable
+                        de herramientas digitales.
+                    </p>
+
+                </article>
+
+
+            </div>
+
         </section>
 
-        <!-- =====================================================
-             DOCENTE
-        ====================================================== -->
-        <section id="docente" class="page-section">
-            <div class="container section-space">
-                <div class="section-heading">
-                    <p class="eyebrow">01 · Perfil</p>
-                    <h2>Perfil <span>docente</span></h2>
-                    <p>
-                        Presentación profesional y propuesta pedagógica del docente en formación
-                        para el área de EPT — Computación.
-                    </p>
-                </div>
 
-                <div class="profile-layout">
-                    <article class="profile-main">
-                        <div class="profile-intro">
-                            <div class="avatar avatar-large">GE</div>
-                            <div>
-                                <span class="tag">DOCENTE EN FORMACIÓN</span>
-                                <h3>Gerson David Eheyen Guarnizo</h3>
-                                <p>Educación Secundaria con mención en Matemática e Informática</p>
-                            </div>
-                        </div>
-
-                        <div class="profile-text">
-                            <p>
-                                Mi propuesta formativa integra tecnología, pensamiento computacional
-                                y estrategias activas para que los estudiantes no solo utilicen
-                                herramientas digitales, sino que comprendan cómo emplearlas para
-                                crear soluciones.
-                            </p>
-                            <p>
-                                En EPT — Computación, el aprendizaje se orienta a la práctica:
-                                explorar herramientas, plantear problemas, desarrollar productos
-                                digitales y reflexionar sobre su impacto y uso responsable.
-                            </p>
-                        </div>
-
-                        <div class="quote-box">
-                            <span>“</span>
-                            <p>La tecnología adquiere sentido educativo cuando permite al estudiante crear, resolver y comunicar.</p>
-                        </div>
-                    </article>
-
-                    <aside class="profile-side">
-                        <div class="side-card">
-                            <span class="number">01</span>
-                            <h3>Propósito</h3>
-                            <p>Diseñar experiencias de aprendizaje digitales, prácticas y pertinentes para secundaria.</p>
-                        </div>
-                        <div class="side-card">
-                            <span class="number">02</span>
-                            <h3>Metodología</h3>
-                            <p>Aprendizaje basado en proyectos, resolución de problemas y actividades prácticas.</p>
-                        </div>
-                        <div class="side-card">
-                            <span class="number">03</span>
-                            <h3>Responsabilidad</h3>
-                            <p>Uso crítico, transparente y verificable de la inteligencia artificial.</p>
-                        </div>
-                    </aside>
-                </div>
-
-                <div class="competency-panel">
-                    <div>
-                        <p class="eyebrow light">Competencias</p>
-                        <h3>Lo que guía la práctica docente</h3>
-                    </div>
-                    <div class="competency-list">
-                        <span>Pensamiento computacional</span>
-                        <span>Competencia digital</span>
-                        <span>Resolución de problemas</span>
-                        <span>Creación de recursos</span>
-                        <span>Ciudadanía digital</span>
-                        <span>IA responsable</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- =====================================================
              SESIONES
         ====================================================== -->
-        <section id="sesiones" class="page-section">
-            <div class="container section-space">
-                <div class="section-heading">
-                    <p class="eyebrow">02 · Experiencia de aprendizaje</p>
-                    <h2>Sesiones de <span>EPT Computación</span></h2>
+
+        <section
+            id="sesiones"
+            class="section section-alt">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        EVIDENCIAS DE APRENDIZAJE
+                    </span>
+
+                    <h2>
+                        Sesiones de aprendizaje
+                    </h2>
+
                     <p>
-                        Espacio para organizar las sesiones y recursos desarrollados durante la experiencia formativa.
+                        Espacio para organizar las sesiones
+                        y evidencias de las semanas 1 a 5.
                     </p>
+
                 </div>
 
-                <div class="session-feature">
-                    <div class="session-number">01</div>
-                    <div class="session-content">
-                        <div class="session-top">
-                            <span class="tag blue-tag">1.º DE SECUNDARIA</span>
-                            <span class="session-code">SESIÓN 01</span>
-                        </div>
-                        <h3>Introducción a la Computación</h3>
-                        <p>
-                            Primera sesión orientada a reconocer conceptos fundamentales de computación
-                            y establecer una base para el trabajo posterior con herramientas digitales.
-                        </p>
-                        <div class="session-pills">
-                            <span>Computación</span>
-                            <span>Conceptos básicos</span>
-                            <span>Competencia digital</span>
-                        </div>
-                    </div>
-                    <div class="session-arrow">→</div>
-                </div>
-
-                <div class="section-note">
-                    <span class="note-icon">+</span>
-                    <div>
-                        <strong>Portafolio en construcción</strong>
-                        <p>Las siguientes sesiones pueden incorporarse aquí manteniendo la misma estructura visual.</p>
-                    </div>
-                </div>
             </div>
+
+
+            <div class="session-grid">
+
+
+                <article class="session-card">
+
+                    <div class="session-top">
+
+                        <span>
+                            01
+                        </span>
+
+                        <em>
+                            PROVISIONAL
+                        </em>
+
+                    </div>
+
+                    <h3>
+                        Introducción a la Computación
+                    </h3>
+
+                    <p>
+                        Sesión provisional. El contenido
+                        será reemplazado por la sesión real.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Propósito de aprendizaje
+                        </li>
+
+                        <li>
+                            Actividades
+                        </li>
+
+                        <li>
+                            Recursos digitales
+                        </li>
+
+                        <li>
+                            Evidencia
+                        </li>
+
+                    </ul>
+
+                    <a
+                        href="#evidencias"
+                        class="text-link nav-link">
+
+                        Ver evidencia →
+
+                    </a>
+
+                </article>
+
+
+
+                <article class="session-card">
+
+                    <div class="session-top">
+
+                        <span>
+                            02
+                        </span>
+
+                        <em>
+                            PROVISIONAL
+                        </em>
+
+                    </div>
+
+                    <h3>
+                        Sesión 02
+                    </h3>
+
+                    <p>
+                        Contenido provisional pendiente
+                        de reemplazo.
+                    </p>
+
+                    <ul>
+
+                        <li>Propósito</li>
+                        <li>Actividades</li>
+                        <li>Recursos</li>
+                        <li>Evaluación</li>
+
+                    </ul>
+
+                    <a
+                        href="#evidencias"
+                        class="text-link nav-link">
+
+                        Ver evidencia →
+
+                    </a>
+
+                </article>
+
+
+
+                <article class="session-card">
+
+                    <div class="session-top">
+
+                        <span>
+                            03
+                        </span>
+
+                        <em>
+                            PROVISIONAL
+                        </em>
+
+                    </div>
+
+                    <h3>
+                        Sesión 03
+                    </h3>
+
+                    <p>
+                        Contenido provisional pendiente
+                        de reemplazo.
+                    </p>
+
+                    <ul>
+
+                        <li>Propósito</li>
+                        <li>Actividades</li>
+                        <li>Recursos</li>
+                        <li>Evaluación</li>
+
+                    </ul>
+
+                    <a
+                        href="#evidencias"
+                        class="text-link nav-link">
+
+                        Ver evidencia →
+
+                    </a>
+
+                </article>
+
+
+
+                <article class="session-card">
+
+                    <div class="session-top">
+
+                        <span>
+                            04
+                        </span>
+
+                        <em>
+                            PROVISIONAL
+                        </em>
+
+                    </div>
+
+                    <h3>
+                        Sesión 04
+                    </h3>
+
+                    <p>
+                        Contenido provisional pendiente
+                        de reemplazo.
+                    </p>
+
+                    <ul>
+
+                        <li>Propósito</li>
+                        <li>Actividades</li>
+                        <li>Recursos</li>
+                        <li>Evaluación</li>
+
+                    </ul>
+
+                    <a
+                        href="#evidencias"
+                        class="text-link nav-link">
+
+                        Ver evidencia →
+
+                    </a>
+
+                </article>
+
+
+
+                <article class="session-card">
+
+                    <div class="session-top">
+
+                        <span>
+                            05
+                        </span>
+
+                        <em>
+                            PROVISIONAL
+                        </em>
+
+                    </div>
+
+                    <h3>
+                        Sesión 05
+                    </h3>
+
+                    <p>
+                        Contenido provisional pendiente
+                        de reemplazo.
+                    </p>
+
+                    <ul>
+
+                        <li>Propósito</li>
+                        <li>Actividades</li>
+                        <li>Recursos</li>
+                        <li>Evaluación</li>
+
+                    </ul>
+
+                    <a
+                        href="#evidencias"
+                        class="text-link nav-link">
+
+                        Ver evidencia →
+
+                    </a>
+
+                </article>
+
+            </div>
+
         </section>
+
+
+
+        <!-- =====================================================
+             PROYECTO EDUCATIVO DIGITAL
+        ====================================================== -->
+
+        <section id="proyecto" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PRODUCTO FINAL
+                    </span>
+
+                    <h2>
+                        Proyecto educativo digital
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-layout">
+
+
+                <div class="project-main panel">
+
+                    <span class="status-pill">
+                        ● PROYECTO EDUCATIVO DIGITAL
+                    </span>
+
+                    <h3>
+                        Portafolio Educativo Digital Docente
+                    </h3>
+
+                    <p>
+
+                        Este portafolio constituye el proyecto
+                        educativo digital integrador desarrollado
+                        durante la asignatura
+                        <strong>
+                            Las TIC Aplicadas a la Educación
+                        </strong>.
+
+                        Su propósito es organizar y presentar
+                        evidencias de aprendizaje, recursos
+                        digitales, experiencias metodológicas
+                        y el uso responsable de inteligencia
+                        artificial.
+
+                    </p>
+
+
+                    <div class="project-facts">
+
+                        <div>
+
+                            <span>
+                                Área
+                            </span>
+
+                            <strong>
+                                Matemática e Informática
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Nivel
+                            </span>
+
+                            <strong>
+                                Educación Secundaria
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Producto
+                            </span>
+
+                            <strong>
+                                Portafolio web público
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Tecnologías
+                            </span>
+
+                            <strong>
+                                HTML · CSS · JavaScript
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="method-panel">
+
+
+                    <div class="method-card">
+
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            ADDIE
+                        </h3>
+
+                        <p>
+                            Marco general para analizar,
+                            diseñar, desarrollar,
+                            implementar y evaluar.
+                        </p>
+
+                    </div>
+
+
+                    <div class="method-card">
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            ASSURE
+                        </h3>
+
+                        <p>
+                            Guía para estructurar
+                            experiencias y sesiones
+                            específicas.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="process">
+
+                <div>
+                    <b>01</b>
+                    <span>Necesidad educativa</span>
+                </div>
+
+                <i>→</i>
+
+                <div>
+                    <b>02</b>
+                    <span>Planificación</span>
+                </div>
+
+                <i>→</i>
+
+                <div>
+                    <b>03</b>
+                    <span>Desarrollo</span>
+                </div>
+
+                <i>→</i>
+
+                <div>
+                    <b>04</b>
+                    <span>IA como apoyo</span>
+                </div>
+
+                <i>→</i>
+
+                <div>
+                    <b>05</b>
+                    <span>Revisión</span>
+                </div>
+
+                <i>→</i>
+
+                <div>
+                    <b>06</b>
+                    <span>Producto final</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
 
         <!-- =====================================================
              EVIDENCIAS
         ====================================================== -->
-        <section id="evidencias" class="page-section">
-            <div class="container section-space">
-                <div class="section-heading">
-                    <p class="eyebrow">03 · Portafolio</p>
-                    <h2>Evidencias de <span>aprendizaje</span></h2>
+
+        <section
+            id="evidencias"
+            class="section section-alt">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PORTAFOLIO DE TRABAJO
+                    </span>
+
+                    <h2>
+                        Evidencias
+                    </h2>
+
                     <p>
-                        Productos y recursos digitales organizados por área de trabajo.
+                        Documentos, recursos y productos
+                        desarrollados durante la formación.
                     </p>
+
                 </div>
 
-                <div class="filter-bar" role="tablist" aria-label="Filtrar evidencias">
-                    <button class="filter-btn active" type="button" data-filter="all">Todas</button>
-                    <button class="filter-btn" type="button" data-filter="computacion">Computación</button>
-                    <button class="filter-btn" type="button" data-filter="programacion">Programación</button>
-                    <button class="filter-btn" type="button" data-filter="ia">IA</button>
-                </div>
-
-                <div id="evidenceGrid" class="evidence-grid">
-                    <article class="evidence-card" data-category="computacion">
-                        <div class="evidence-visual visual-blue">
-                            <span class="visual-symbol">&lt;/&gt;</span>
-                            <span class="visual-label">COMPUTACIÓN</span>
-                        </div>
-                        <div class="evidence-body">
-                            <span class="card-tag">COMPUTACIÓN</span>
-                            <h3>Recursos digitales educativos</h3>
-                            <p>Diseño de recursos para acompañar actividades de aprendizaje en secundaria.</p>
-                            <button class="text-btn" type="button" data-section="sesiones">Ver contexto <span>→</span></button>
-                        </div>
-                    </article>
-
-                    <article class="evidence-card" data-category="programacion">
-                        <div class="evidence-visual visual-cyan">
-                            <span class="visual-symbol">{ }</span>
-                            <span class="visual-label">PROGRAMACIÓN</span>
-                        </div>
-                        <div class="evidence-body">
-                            <span class="card-tag cyan-text">PROGRAMACIÓN</span>
-                            <h3>Proyecto web educativo</h3>
-                            <p>Desarrollo de una aplicación web educativa mediante HTML, CSS y JavaScript.</p>
-                            <span class="tech-stack"><b>HTML</b><b>CSS</b><b>JS</b></span>
-                        </div>
-                    </article>
-
-                    <article class="evidence-card" data-category="ia">
-                        <div class="evidence-visual visual-orange">
-                            <span class="visual-symbol">AI</span>
-                            <span class="visual-label">INTELIGENCIA ARTIFICIAL</span>
-                        </div>
-                        <div class="evidence-body">
-                            <span class="card-tag orange-text">IA</span>
-                            <h3>Recurso educativo con IA</h3>
-                            <p>Diseño de actividades mediante instrucciones estructuradas y revisión de resultados.</p>
-                            <button class="text-btn orange-btn" type="button" data-section="ia">Ver trazabilidad <span>→</span></button>
-                        </div>
-                    </article>
-
-                    <article class="evidence-card" data-category="programacion">
-                        <div class="evidence-visual visual-dark">
-                            <span class="visual-symbol">JS</span>
-                            <span class="visual-label">CÓDIGO</span>
-                        </div>
-                        <div class="evidence-body">
-                            <span class="card-tag">PROGRAMACIÓN</span>
-                            <h3>Programación educativa</h3>
-                            <p>Aplicación de JavaScript para crear actividades web interactivas.</p>
-                            <span class="tech-stack"><b>DOM</b><b>EVENTOS</b><b>UI</b></span>
-                        </div>
-                    </article>
-                </div>
-
-                <div id="emptyEvidence" class="empty-state" hidden>
-                    No hay evidencias para este filtro.
-                </div>
             </div>
+
+
+            <div class="filters">
+
+                <button
+                    class="filter-btn active"
+                    data-filter="all">
+
+                    Todas
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="sesion">
+
+                    Sesiones
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="documento">
+
+                    Documentos
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="recurso">
+
+                    Recursos digitales
+
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-filter="ia">
+
+                    IA
+
+                </button>
+
+            </div>
+
+
+            <div class="evidence-grid">
+
+
+                <article
+                    class="evidence-card"
+                    data-category="sesion">
+
+                    <span class="evidence-icon">
+                        📚
+                    </span>
+
+                    <small>
+                        SESIÓN
+                    </small>
+
+                    <h3>
+                        Sesión de aprendizaje 01
+                    </h3>
+
+                    <p>
+                        Evidencia provisional.
+                    </p>
+
+                    <a
+                        href="#"
+                        class="text-link placeholder-link">
+
+                        Ver evidencia →
+
+                    </a>
+
+                </article>
+
+
+
+                <article
+                    class="evidence-card"
+                    data-category="documento">
+
+                    <span class="evidence-icon">
+                        📄
+                    </span>
+
+                    <small>
+                        DOCUMENTO
+                    </small>
+
+                    <h3>
+                        Instrumento de evaluación
+                    </h3>
+
+                    <p>
+                        Espacio provisional para
+                        una rúbrica o lista de cotejo.
+                    </p>
+
+                    <a
+                        href="#"
+                        class="text-link placeholder-link">
+
+                        Ver evidencia →
+
+                    </a>
+
+                </article>
+
+
+
+                <article
+                    class="evidence-card"
+                    data-category="recurso">
+
+                    <span class="evidence-icon">
+                        💻
+                    </span>
+
+                    <small>
+                        RECURSO DIGITAL
+                    </small>
+
+                    <h3>
+                        Recurso educativo interactivo
+                    </h3>
+
+                    <p>
+                        Espacio para colocar
+                        el recurso desarrollado.
+                    </p>
+
+                    <a
+                        href="#"
+                        class="text-link placeholder-link">
+
+                        Abrir recurso →
+
+                    </a>
+
+                </article>
+
+
+
+                <article
+                    class="evidence-card"
+                    data-category="ia">
+
+                    <span class="evidence-icon">
+                        🤖
+                    </span>
+
+                    <small>
+                        INTELIGENCIA ARTIFICIAL
+                    </small>
+
+                    <h3>
+                        Proceso de generación y revisión
+                    </h3>
+
+                    <p>
+                        Evidencia elaborada con
+                        apoyo de IA.
+                    </p>
+
+                    <a
+                        href="#ia"
+                        class="text-link nav-link">
+
+                        Ver trazabilidad →
+
+                    </a>
+
+                </article>
+
+            </div>
+
         </section>
+
+
 
         <!-- =====================================================
-             IA ÉTICA
+             IA GENERATIVA
         ====================================================== -->
-        <section id="ia" class="page-section">
-            <div class="container section-space">
-                <div class="section-heading">
-                    <p class="eyebrow">04 · Transparencia</p>
-                    <h2>Matriz de uso <span>ético de IA</span></h2>
+
+        <section id="ia" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    05
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        APOYO GENERATIVO
+                    </span>
+
+                    <h2>
+                        Uso de inteligencia artificial
+                    </h2>
+
                     <p>
-                        Registro de herramientas, propósito y prompts utilizados durante el desarrollo del portafolio.
+                        La IA se utiliza como apoyo para crear,
+                        revisar y mejorar recursos educativos.
                     </p>
+
                 </div>
 
-                <div class="ia-principles">
-                    <article>
-                        <span>01</span>
-                        <div><h3>Trazabilidad</h3><p>Registrar qué herramienta se utilizó y con qué propósito.</p></div>
-                    </article>
-                    <article>
-                        <span>02</span>
-                        <div><h3>Verificación</h3><p>Contrastar la información generada antes de incorporarla al proyecto.</p></div>
-                    </article>
-                    <article>
-                        <span>03</span>
-                        <div><h3>Autoría</h3><p>Mantener responsabilidad sobre las decisiones y productos finales.</p></div>
-                    </article>
-                </div>
-
-                <div class="table-card">
-                    <div class="table-toolbar">
-                        <div>
-                            <span class="table-title">Matriz sintética</span>
-                            <small>Busca por herramienta, uso o prompt.</small>
-                        </div>
-                        <label class="search-box">
-                            <span>⌕</span>
-                            <input id="iaSearch" type="search" placeholder="Buscar en la matriz..." autocomplete="off">
-                        </label>
-                    </div>
-
-                    <div class="table-scroll">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Herramienta</th>
-                                    <th>Uso / propósito</th>
-                                    <th>Prompt / instrucción</th>
-                                    <th>Acción</th>
-                                </tr>
-                            </thead>
-                            <tbody id="iaTableBody">
-                                <tr class="ia-row" data-search="chatgpt computación recurso educativo programación actividad">
-                                    <td><strong>ChatGPT</strong><span class="tool-type">IA generativa</span></td>
-                                    <td>Diseño y planificación de recursos educativos digitales para EPT — Computación.</td>
-                                    <td><code class="prompt-text">Diseña un recurso educativo interactivo para estudiantes de secundaria que permita aprender un concepto de computación mediante una actividad práctica y digital.</code></td>
-                                    <td><button class="copy-btn" type="button">Copiar</button></td>
-                                </tr>
-
-                                <tr class="ia-row" data-search="gemini computación actividad ideas recurso educativo">
-                                    <td><strong>Gemini</strong><span class="tool-type">IA generativa</span></td>
-                                    <td>Generación de ideas para actividades y recursos de aprendizaje.</td>
-                                    <td><code class="prompt-text">Propón cinco actividades prácticas para enseñar computación en educación secundaria utilizando recursos digitales accesibles.</code></td>
-                                    <td><button class="copy-btn" type="button">Copiar</button></td>
-                                </tr>
-
-                                <tr class="ia-row" data-search="copilot programación html css javascript informática código">
-                                    <td><strong>Microsoft Copilot</strong><span class="tool-type">Asistente de código</span></td>
-                                    <td>Apoyo en la revisión y desarrollo de código para recursos educativos.</td>
-                                    <td><code class="prompt-text">Revisa este código HTML, CSS y JavaScript y propón mejoras para que sea accesible, responsive y adecuado para estudiantes de secundaria.</code></td>
-                                    <td><button class="copy-btn" type="button">Copiar</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="noResults" class="no-results" hidden>No se encontraron resultados.</div>
-                </div>
             </div>
+
+
+            <div class="ai-intro panel">
+
+                <div class="ai-symbol">
+                    AI
+                </div>
+
+                <p>
+
+                    Durante la elaboración de este Portafolio
+                    Educativo Digital se utilizaron herramientas
+                    de inteligencia artificial generativa como
+                    apoyo para la creación, revisión y mejora
+                    de diferentes recursos.
+
+                    Los resultados generados son revisados,
+                    seleccionados y adaptados de acuerdo con
+                    el propósito educativo y el criterio del autor.
+
+                </p>
+
+            </div>
+
+
+            <div class="ai-tools">
+
+
+                <article class="ai-card">
+
+                    <span>
+                        GPT
+                    </span>
+
+                    <h3>
+                        ChatGPT
+                    </h3>
+
+                    <strong>
+                        Generación y diseño de recursos educativos
+                    </strong>
+
+                    <ul>
+
+                        <li>
+                            Ideas y propuestas
+                        </li>
+
+                        <li>
+                            Sesiones y actividades
+                        </li>
+
+                        <li>
+                            Ejemplos y ejercicios
+                        </li>
+
+                        <li>
+                            Apoyo en código y redacción
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <article class="ai-card">
+
+                    <span>
+                        CL
+                    </span>
+
+                    <h3>
+                        Claude
+                    </h3>
+
+                    <strong>
+                        Revisión y desarrollo de materiales
+                    </strong>
+
+                    <ul>
+
+                        <li>
+                            Revisión de materiales
+                        </li>
+
+                        <li>
+                            Rúbricas y guías
+                        </li>
+
+                        <li>
+                            Apoyo en código
+                        </li>
+
+                        <li>
+                            Mejora de propuestas
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <article class="ai-card">
+
+                    <span>
+                        PDF
+                    </span>
+
+                    <h3>
+                        ChatPDF
+                    </h3>
+
+                    <strong>
+                        Análisis de documentos educativos
+                    </strong>
+
+                    <ul>
+
+                        <li>
+                            Consulta de PDF
+                        </li>
+
+                        <li>
+                            Síntesis
+                        </li>
+
+                        <li>
+                            Extracción de información
+                        </li>
+
+                        <li>
+                            Comprensión documental
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <article class="ai-card">
+
+                    <span>
+                        QB
+                    </span>
+
+                    <h3>
+                        QuillBot
+                    </h3>
+
+                    <strong>
+                        Mejora de comunicación escrita
+                    </strong>
+
+                    <ul>
+
+                        <li>
+                            Paráfrasis
+                        </li>
+
+                        <li>
+                            Redacción
+                        </li>
+
+                        <li>
+                            Claridad y coherencia
+                        </li>
+
+                        <li>
+                            Adaptación de textos
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- MATRIZ -->
+
+            <div class="traceability">
+
+                <div class="subheading">
+
+                    <span>
+                        TRAZABILIDAD
+                    </span>
+
+                    <h3>
+                        Matriz de uso de IA
+                    </h3>
+
+                </div>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Herramienta
+                                </th>
+
+                                <th>
+                                    ¿Para qué?
+                                </th>
+
+                                <th>
+                                    Prompt
+                                </th>
+
+                                <th>
+                                    Resultado
+                                </th>
+
+                                <th>
+                                    Intervención del autor
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    ChatGPT
+                                </td>
+
+                                <td>
+                                    Generación de ideas,
+                                    actividades y recursos.
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Revisión y adaptación.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Claude
+                                </td>
+
+                                <td>
+                                    Revisión y desarrollo
+                                    de materiales.
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Revisión y adaptación.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    ChatPDF
+                                </td>
+
+                                <td>
+                                    Consulta y síntesis
+                                    de documentos.
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Contraste de información.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    QuillBot
+                                </td>
+
+                                <td>
+                                    Mejora y paráfrasis
+                                    de textos.
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Por registrar
+                                </td>
+
+                                <td>
+                                    Revisión de redacción.
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROCESO -->
+
+            <div class="ai-process">
+
+                <div>
+                    💡
+                    <span>
+                        Necesidad educativa
+                    </span>
+                </div>
+
+                <b>→</b>
+
+                <div>
+                    🤖
+                    <span>
+                        Consulta a IA
+                    </span>
+                </div>
+
+                <b>→</b>
+
+                <div>
+                    📝
+                    <span>
+                        Propuesta
+                    </span>
+                </div>
+
+                <b>→</b>
+
+                <div>
+                    🔎
+                    <span>
+                        Verificación
+                    </span>
+                </div>
+
+                <b>→</b>
+
+                <div>
+                    👨‍🏫
+                    <span>
+                        Criterio docente
+                    </span>
+                </div>
+
+                <b>→</b>
+
+                <div>
+                    🎓
+                    <span>
+                        Recurso final
+                    </span>
+                </div>
+
+            </div>
+
         </section>
+
+
+
+        <!-- =====================================================
+             REFLEXIÓN ÉTICA
+        ====================================================== -->
+
+        <section
+            id="reflexion"
+            class="section section-alt">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    06
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        ACTITUD CRÍTICA
+                    </span>
+
+                    <h2>
+                        Reflexión ética
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="reflection-layout">
+
+
+                <article class="reflection-text panel">
+
+                    <h3>
+                        Mi reflexión
+                    </h3>
+
+                    <p>
+
+                        La inteligencia artificial puede
+                        convertirse en una herramienta de apoyo
+                        para nuestra formación docente, siempre
+                        que su utilización sea crítica,
+                        responsable y transparente.
+
+                    </p>
+
+
+                    <p>
+
+                        Durante la elaboración de este portafolio,
+                        la IA puede ayudar a generar ideas,
+                        organizar información, desarrollar
+                        recursos y mejorar algunos materiales.
+
+                        Sin embargo, los resultados obtenidos
+                        no deben asumirse automáticamente
+                        como correctos.
+
+                    </p>
+
+
+                    <p>
+
+                        Como futuro docente de Educación
+                        Secundaria con mención en Matemática
+                        e Informática, considero necesario
+                        revisar, verificar y adaptar cualquier
+                        contenido generado por IA antes de
+                        utilizarlo con los estudiantes.
+
+                    </p>
+
+                </article>
+
+
+
+                <div class="principles">
+
+
+                    <article>
+
+                        <span>
+                            ✍️
+                        </span>
+
+                        <h3>
+                            Autoría
+                        </h3>
+
+                        <p>
+                            Reconozco qué parte del trabajo
+                            es propia y cuál recibió apoyo de IA.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            🔎
+                        </span>
+
+                        <h3>
+                            Verificación
+                        </h3>
+
+                        <p>
+                            Reviso y contrasto la información
+                            antes de utilizarla.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            💬
+                        </span>
+
+                        <h3>
+                            Transparencia
+                        </h3>
+
+                        <p>
+                            Declaro las herramientas de IA
+                            utilizadas cuando corresponde.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            🎓
+                        </span>
+
+                        <h3>
+                            Responsabilidad
+                        </h3>
+
+                        <p>
+                            Utilizo la IA como apoyo sin
+                            sustituir el criterio docente.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="do-dont">
+
+
+                <article class="do-card">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <h3>
+                        Sí hacemos
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Revisar y validar resultados.
+                        </li>
+
+                        <li>
+                            Mencionar el uso de IA cuando corresponde.
+                        </li>
+
+                        <li>
+                            Adaptar las sugerencias al contexto del aula.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <article class="dont-card">
+
+                    <span>
+                        ×
+                    </span>
+
+                    <h3>
+                        No hacemos
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Copiar y publicar sin revisión.
+                        </li>
+
+                        <li>
+                            Presentar como propio un producto
+                            generado íntegramente por IA.
+                        </li>
+
+                        <li>
+                            Reemplazar la reflexión pedagógica.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="metacognition panel">
+
+                <span class="eyebrow">
+                    METACOGNICIÓN
+                </span>
+
+                <h3>
+                    ¿Qué aprendí y qué debo mejorar?
+                </h3>
+
+
+                <div class="meta-grid">
+
+
+                    <div>
+
+                        <b>
+                            ¿Qué aprendí?
+                        </b>
+
+                        <p>
+                            La IA requiere criterio y revisión
+                            para aportar valor educativo.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+                            ¿Cómo lo aprendí?
+                        </b>
+
+                        <p>
+                            Explorando herramientas, generando
+                            propuestas y contrastando resultados.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+                            ¿Para qué me sirve?
+                        </b>
+
+                        <p>
+                            Para diseñar y mejorar recursos
+                            digitales de aprendizaje.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+                            ¿Qué debo mejorar?
+                        </b>
+
+                        <p>
+                            La verificación de información,
+                            diseño de prompts y adaptación pedagógica.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
 
         <!-- =====================================================
              SUSTENTACIÓN
         ====================================================== -->
-        <section id="sustentacion" class="page-section">
-            <div class="container section-space">
-                <div class="section-heading">
-                    <p class="eyebrow">05 · Presentación</p>
-                    <h2>Sustentación y <span>documentación</span></h2>
+
+        <section
+            id="sustentacion"
+            class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    07
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        PRESENTACIÓN FINAL
+                    </span>
+
+                    <h2>
+                        Sustentación
+                    </h2>
+
                     <p>
-                        La estructura del portafolio está preparada para evidenciar funcionalidad,
-                        coherencia metodológica, uso ético de IA y organización del trabajo.
+                        Guía para presentar el Portafolio
+                        Educativo Digital.
                     </p>
+
                 </div>
 
-                <div class="rubric-grid">
-                    <article><span>01</span><h3>Arquitectura digital</h3><p>Navegación clara, diseño responsive y enlaces organizados.</p></article>
-                    <article><span>02</span><h3>Articulación metodológica</h3><p>Relación entre perfil, propósito, sesiones y evidencias.</p></article>
-                    <article><span>03</span><h3>IA ética</h3><p>Matriz de prompts, trazabilidad y criterios de verificación.</p></article>
-                    <article><span>04</span><h3>Sustentación oral</h3><p>Contenido organizado para explicar el proyecto durante la exposición.</p></article>
-                    <article><span>05</span><h3>Trabajo colaborativo</h3><p>Espacio para integrar integrantes, roles y documentación final.</p></article>
-                </div>
-
-                <div class="document-panel">
-                    <div class="document-icon">PDF</div>
-                    <div>
-                        <span class="eyebrow light">DOCUMENTACIÓN FINAL</span>
-                        <h3>Informe de sustentación</h3>
-                        <p>Coloca el PDF final dentro de <code>documentos/</code> y actualiza el enlace en este archivo.</p>
-                    </div>
-                    <a class="btn btn-primary" href="documentos/informe-sustentacion.pdf" target="_blank" rel="noopener noreferrer">
-                        Ver informe <span>↗</span>
-                    </a>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-heading">
-                        <div>
-                            <span class="eyebrow">Equipo</span>
-                            <h3>Participación y responsabilidades</h3>
-                        </div>
-                        <span class="team-badge">EPT · COMPUTACIÓN</span>
-                    </div>
-
-                    <div class="team-grid">
-                        <article>
-                            <div class="team-avatar">GE</div>
-                            <div><strong>Gerson David Eheyen Guarnizo</strong><span>Desarrollo y coordinación</span></div>
-                        </article>
-                        <article>
-                            <div class="team-avatar muted">I2</div>
-                            <div><strong>Integrante 2</strong><span>Investigación</span></div>
-                        </article>
-                        <article>
-                            <div class="team-avatar muted">I3</div>
-                            <div><strong>Integrante 3</strong><span>Diseño y sustentación</span></div>
-                        </article>
-                    </div>
-                </div>
             </div>
+
+
+            <div class="presentation-grid">
+
+
+                <div class="presentation-step">
+
+                    <b>01</b>
+
+                    <h3>
+                        Presentación
+                    </h3>
+
+                    <p>
+                        Identidad y propósito del portafolio.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-step">
+
+                    <b>02</b>
+
+                    <h3>
+                        Perfil docente
+                    </h3>
+
+                    <p>
+                        Formación e intereses profesionales.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-step">
+
+                    <b>03</b>
+
+                    <h3>
+                        Sesiones
+                    </h3>
+
+                    <p>
+                        Organización de experiencias de aprendizaje.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-step">
+
+                    <b>04</b>
+
+                    <h3>
+                        Proyecto digital
+                    </h3>
+
+                    <p>
+                        El portafolio como producto integrador.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-step">
+
+                    <b>05</b>
+
+                    <h3>
+                        Evidencias
+                    </h3>
+
+                    <p>
+                        Documentos, recursos e instrumentos.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-step">
+
+                    <b>06</b>
+
+                    <h3>
+                        IA generativa
+                    </h3>
+
+                    <p>
+                        Herramientas, prompts, resultados y revisión.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-step">
+
+                    <b>07</b>
+
+                    <h3>
+                        Reflexión ética
+                    </h3>
+
+                    <p>
+                        Autoría, transparencia, verificación
+                        y responsabilidad.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-step">
+
+                    <b>08</b>
+
+                    <h3>
+                        Conclusiones
+                    </h3>
+
+                    <p>
+                        Aprendizajes y aspectos por mejorar.
+                    </p>
+
+                </div>
+
+
+            </div>
+
         </section>
+
+
+
+        <!-- =====================================================
+             CONTACTO
+        ====================================================== -->
+
+        <section
+            id="contacto"
+            class="section contact-section section-alt">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    08
+                </span>
+
+                <div>
+
+                    <span class="eyebrow">
+                        CONEXIÓN PROFESIONAL
+                    </span>
+
+                    <h2>
+                        Contacto
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        FUTURO DOCENTE
+                    </span>
+
+                    <h3>
+                        Gerson David Eheyen Guarnizo
+                    </h3>
+
+                    <p>
+                        Educación Secundaria con mención
+                        en Matemática e Informática
+                    </p>
+
+                </div>
+
+
+                <div class="contact-details">
+
+
+                    <div>
+
+                        <span>
+                            Asignatura
+                        </span>
+
+                        <strong>
+                            Las TIC Aplicadas a la Educación
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Docente
+                        </span>
+
+                        <strong>
+                            Miguel López Cruz
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Correo
+                        </span>
+
+                        <strong>
+                            Dato provisional
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            GitHub
+                        </span>
+
+                        <strong>
+                            Dato provisional
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+    ====================================================== -->
+
     <footer class="site-footer">
-        <div class="container footer-grid">
-            <div>
-                <strong>Portafolio EPT · Computación</strong>
-                <p>Gerson David Eheyen Guarnizo</p>
-            </div>
-            <div class="footer-career">
-                <span>Carrera</span>
-                <strong>Educación Secundaria con mención en Matemática e Informática</strong>
-            </div>
-            <p class="footer-year">2026</p>
+
+        <div>
+
+            <strong>
+                GE · Portafolio Educativo Digital
+            </strong>
+
+            <span>
+                Educación Secundaria ·
+                Matemática e Informática
+            </span>
+
         </div>
+
+
+        <small>
+            Las TIC Aplicadas a la Educación · Ciclo VI
+        </small>
+
     </footer>
 
-    <script src="script.js"></script>
+
+
+    <!-- =====================================================
+         RESPALDO DEL LOADER
+         Evita que quede bloqueado si JS no carga.
+    ====================================================== -->
+
+    <script>
+
+        setTimeout(function () {
+
+            const loader =
+                document.getElementById("loader");
+
+            if (loader) {
+
+                loader.classList.add("loaded");
+
+            }
+
+        }, 3000);
+
+    </script>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
